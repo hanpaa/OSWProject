@@ -31,7 +31,7 @@ function renderProduct(model, length, JSONKey, condition) {
                 itemInput.setAttribute("type", "checkbox");
                 itemInput.setAttribute("name", "chooseItem");
                 itemInput.setAttribute("value", DB.itemNumber)
-                imgSrc.src = "../css/image/" + DB.image + ".jpg";
+                imgSrc.src = "../css/image/" + DB.image1 + ".jpg";
                 imgSrc.width = 270;
                 imgSrc.height = 380;
                 itemLiA.setAttribute("class", "a");
@@ -79,6 +79,15 @@ function renderNew() {
     let length = localItemDB.items.length;
 
     renderProduct(localItemDB,length, "new", "1")
+
+}
+
+function renderTraining() {
+
+    let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
+    let length = localItemDB.items.length;
+
+    renderProduct(localItemDB,length, "category", "training")
 
 }
 

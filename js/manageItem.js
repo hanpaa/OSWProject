@@ -13,52 +13,69 @@ const itemDB = {
     "items" : [
         {"itemNumber" : "0",
             "category" : "top",
-            "name" : "아디다스상의",
+            "name" : "대충 베이지색 운동",
             "price" : "248,000원",
-            "image" : "product1_1",
+            "image1" : "product1_1",
+            "image2" : "product1_2",
+            "image3" : "product1_3",
             "new" : "0"
-
         },
-        {
-            "itemNumber" : "1",
+        {"itemNumber" : "1",
+            "category" : "bottom",
+            "name" : "대충 짱이쁜 파란색 하의",
+            "price" : "980,000원",
+            "image1" : "product2_1",
+            "image2" : "product2_2",
+            "image3" : "product2_3",
+            "new" : "1"
+        },
+        {"itemNumber" : "2",
+            "category" : "training",
+            "name" : "물통",
+            "price" : "50,000원",
+            "image1" : "product3_1",
+            "image2" : "product3_2",
+            "image3" : "product3_3",
+            "new" : "0"
+        },
+        {"itemNumber" : "3",
             "category" : "top",
-            "name" : "언더아머상의",
-            "price" : "180,000원",
-            "image" : "product1_1",
+            "name" : "신상 한정판 흰색상의 ",
+            "price" : "248,000원",
+            "image1" : "product4_1",
+            "image2" : "product4_2",
+            "image3" : "product4_3",
             "new" : "1"
         },
-        {
-            "itemNumber" : "2",
-            "category" : "bottom",
-            "name" : "언더아머하의",
-            "price" : "500,000원",
-            "image" : "product1_1",
-            "new" : "1"
-        },
-        {
-            "itemNumber" : "3",
-            "category" : "bottom",
-            "name" : "아디다스하의",
-            "price" : "70,000원",
-            "image" : "product1_1",
+        {"itemNumber" : "4",
+            "category" : "top",
+            "name" : "겁나편한 회색 상의",
+            "price" : "120,000원",
+            "image1" : "product5_1",
+            "image2" : "product5_2",
+            "image3" : "product5_3",
             "new" : "0"
         },
-        {
-            "itemNumber" : "4",
-            "category" : "training",
-            "name" : "푸쉬업바",
-            "price" : "55,000원",
-            "image" : "product1_1",
-            "new" : "1"
-        },
-        {
-            "itemNumber" : "5",
-            "category" : "training",
-            "name" : "런닝머신",
-            "price" : "1,999,000원",
-            "image" : "product1_1",
+        {"itemNumber" : "5",
+            "category" : "bottom",
+            "name" : "땀 잘 마르는 진한회색 하의",
+            "price" : "300,000원",
+            "image1" : "product6_1",
+            "image2" : "product6_2",
+            "image3" : "product6_3",
             "new" : "0"
+        },
+        {"itemNumber" : "6",
+            "category" : "bottom",
+            "name" : "살려줘",
+            "price" : "750,000원",
+            "image1" : "product7_1",
+            "image2" : "product7_2",
+            "image3" : "product7_3",
+            "new" : "1"
         }
+
+
     ]
 
     /**
