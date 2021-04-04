@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/main.css" type="text/css">
     <script src="../js/cookieSession.js"></script>
     <script src="../js/includeHTML.js"></script>
+    <link href="../css/finduser.css" rel="stylesheet">
+
 </head>
 <body>
 <div id="mainContainer">
@@ -17,6 +19,8 @@
                 <li><a class="login-menu" id ="loginBtn" href="login.html">로그인</a></li>
                 <li><a class="login-menu" id ="logoutBtn" onclick="logout()">로그아웃</a></li>
                 <li><a class="login-menu" id ="bagBtn" href="#">장바구니</a></li>
+                <li><a class="login-menu" id ="profileBtn" href="userProfile.html">내 정보</a></li>
+                <li><a class="login-menu" id="csBtn" href="CScenter.html">고객센터</a></li>
             </ul>
         </div>
 
@@ -29,24 +33,22 @@
     <nav id="nav-menu" include-html="./layout/nav_menu.html"></nav>
 
     <section id="contents">
-        <form id="login-form">
-            <p>아이디 찾기</p>
-            <input id="findUserName" type="text" placeholder="Name"/>
-            <input id="findUserContact" type="text" placeholder="'-'를 뺀 전화번호"/>
-            <button type="button" id="findUserBtn" onClick="findUserId()">아이디 찾기</button>
+        <section class="login">
+            <form id="login-form">
+                <h2>아이디 & 비밀번호 찾기</h2>
+                    <ul>
+                        <li><input id="findUserName" type="text" placeholder="이름"/></li>
+                        <li><input id="findUserContact" type="text" placeholder="'-'를 뺀 전화번호"/></li>
+                        <li><button type="button" id="findUserBtn" onClick="findUserId()">아이디 찾기</button></li>
 
-            <p>비밀번호 찾기</p>
-
-            <input id="findPasswordId" type="text" placeholder="Id"/>
-            <input id="findPasswordName" type="text" placeholder="Name"/>
-            <input id="findPasswordContact" type="text" placeholder="'-'를 뺀 전화번호"/>
-            <button type="button" id="findPasswordBtn" onClick="findUserPassword()">비밀번호 찾기</button>
-
-       </form>
-
+                        <li><input id="findPasswordId" type="text" placeholder="아이디"/></li>
+                        <li><input id="findPasswordName" type="text" placeholder="이름"/></li>
+                        <li><input id="findPasswordContact" type="text" placeholder="'-'를 뺀 전화번호"/></li>
+                        <li><button type="button" id="findPasswordBtn" onClick="findUserPassword()">비밀번호 찾기</button></li>
+                    </ul>
+           </form>
+        </section>
     </section>
-
-    <aside id="rightSideBar" include-html="./layout/rightSideBar.html"></aside>
 
     <footer id="footer" include-html="./layout/footer.html"></footer>
 </div>

@@ -11,6 +11,8 @@
             crossorigin="anonymous"></script>
     <script src="../js/includeHTML.js"></script>
     <script src="../js/cookieSession.js"></script>
+    <script src="../js/manageItem.js"></script>
+    <script src="../js/render.js"></script>
 </head>
 
 <body id="mainContainer">
@@ -37,19 +39,19 @@
         <div id="sectionWrap">
             <!-- product section 시작 -->
             <section id="product" class="clearfix">
-                <div class="product_img">
-                    <img src="../css/image/product1_1.jpg" width="500" height="750" alt="레깅스 상품 이미지">
+                <div class="product_img" id = "productThumb">
+<!--                    <img src="../css/image/product1_1.jpg" width="500" height="750" alt="레깅스 상품 이미지">-->
                 </div>
-                <div class="product_tit">
-                    <h3>에어리 레깅스</h3>
-                    <p>가볍고 탄탄한 sweethome의 신작입니다.</p>
+                <div class="product_tit" id = "productText">
+<!--                    <h3>에어리 레깅스</h3>-->
+<!--                    <p>가볍고 탄탄한 sweethome의 신작입니다.</p>-->
                 </div>
-                <div class="product_info">
-                    <table>
+                <div class="product_info" >
+                    <table  >
                         <tbody>
-                        <tr>
+                        <tr id = "productTable">
                             <th>판매가</th>
-                            <td>20,000원</td>
+<!--                            <td>20,000원</td>-->
                         </tr>
                         <tr>
                             <th>배송</th>
@@ -64,12 +66,12 @@
 
                 </div>
                 <div class="product_value">
-                    <div class="number">
-                        <a href="#" class="minus"><i class="xi-minus-circle xi-2x"></i></a>
-                        <input type="number" min="1" value="1">
-                        <a href="#" class="plus"><i class="xi-plus-circle xi-2x"></i></a>
-                    </div>
-                    <p>총 상품금액 <span>20,000</span>원</p>
+                    <div class="number" id="productPrice">
+<!--                        <a href="#" class="minus"><i class="xi-minus-circle xi-2x"></i></a>-->
+<!--                        <input type="number" min="1" value="1">-->
+<!--                        <a href="#" class="plus"><i class="xi-plus-circle xi-2x"></i></a>-->
+<!--                    </div>-->
+<!--                    <p>총 상품금액 <span>20,000</span>원</p>-->
                 </div>
 
                 <div class="product_link">
@@ -81,10 +83,10 @@
             <!-- product section 끝 -->
 
             <!-- 상세이미지 -->
-            <div class="tap_product">
-                <img src="../css/image/product1_1.jpg" width="670" height="980" alt="제품 상세 설명 이미지">
-                <img src="../css/image/product1_2.jpg" width="670" height="980" alt="제품 상세 설명 이미지">
-                <img src="../css/image/product1_3.jpg" width="670" height="980" alt="제품 상세 설명 이미지">
+            <div class="tap_product" id = "productImages">
+<!--                <img src="../css/image/product1_1.jpg" width="670" height="980" alt="제품 상세 설명 이미지">-->
+<!--                <img src="../css/image/product1_2.jpg" width="670" height="980" alt="제품 상세 설명 이미지">-->
+<!--                <img src="../css/image/product1_3.jpg" width="670" height="980" alt="제품 상세 설명 이미지">-->
             </div>
 
         </div>
@@ -100,7 +102,9 @@
 <script>
     includeHTML();
     changeLoginBtn();
+    setItemDB();
+    renderDetail();
 </script>
-<script src="../js/manageItem.js"></script>
+
 
 </html>
