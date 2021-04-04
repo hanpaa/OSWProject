@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/main.css" type="text/css">
     <script src="../js/cookieSession.js"></script>
     <script src="../js/includeHTML.js"></script>
+    <link href="../css/login.css" rel="stylesheet">
+
 </head>
 <body>
 <div id="mainContainer">
@@ -18,6 +20,7 @@
                 <li><a class="login-menu" id ="logoutBtn" onclick="logout()">로그아웃</a></li>
                 <li><a class="login-menu" id ="bagBtn" href="mybag.html">장바구니</a></li>
                 <li><a class="login-menu" id ="profileBtn" href="userProfile.html">내 정보</a></li>
+                <li><a class="login-menu" id="csBtn" href="CScenter.html">고객센터</a></li>
             </ul>
         </div>
 
@@ -30,16 +33,20 @@
     <nav id="nav-menu" include-html="./layout/nav_menu.html"></nav>
 
     <section id="contents">
-        <form id="login-form">
-            <input id="loginUserId" type="text" placeholder="Name"/>
-            <input id="loginPassword" type="password" placeholder="Password"/>
-            <button type="button" id="loginButton" onClick="login()">login</button>
+        <section class="login">
+            <h2>로그인</h2>
+            <form id="login-form">
+                <ul>
+                    <li><input id="loginUserId" type="text" placeholder="아이디"/></li>
+                    <li><input id="loginPassword" type="password" placeholder="비밀번호"/></li>
+                    <li><button type="button" id="loginButton" onClick="login()">로그인</button></li>
+                </ul>
+
+            </form>
+
             <a href="findUser.html">아이디/비밀번호를 잊었습니까?</a>
-        </form>
-
+        </section>
     </section>
-
-    <aside id="rightSideBar" include-html="./layout/rightSideBar.html"></aside>
 
     <footer id="footer" include-html="./layout/footer.html"></footer>
 </div>
