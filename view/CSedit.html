@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/cscntr.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-ico">
+    <meta name="theme-color" content="#ffffff">
+    <title>SweetHome</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="../js/includeHTML.js"></script>
+    <script src="../js/cookieSession.js"></script>
+    <script src="../js/manageItem.js"></script>
+</head>
+
+
+<body>
+
+<div id="mainContainer">
+    <header id="header">
+        <div id="headerLogin">
+            <ul>
+                <li><a class="login-menu" id ="registerBtn" href="register.html">회원가입</a></li>
+                <li><a class="login-menu" id ="loginBtn" href="login.html">로그인</a></li>
+                <li><a class="login-menu" id ="logoutBtn" onclick="logout()">로그아웃</a></li>
+                <li><a class="login-menu" id ="bagBtn" href="mybag.html">장바구니</a></li>
+                <li><a class="login-menu" id ="profileBtn" href="userProfile.html">내 정보</a></li>
+                <li><a class="login-menu" id="csBtn" href="CScenter.html">고객센터</a>
+            </ul>
+        </div>
+        <div id="logo">
+            <h1><a href="index.html">Sweet Home</a></h1>
+        </div>
+    </header>
+
+    <nav id="nav-menu" include-html="./layout/nav_menu.html"></nav>
+
+    <section id="boardTitle">
+        <h2>고객센터</h2>
+    </section>
+
+    <div class="boardWrite">
+        <div class="title">
+            <dl>
+                <dt>제목</dt>
+                <dd><input type="text" placeholder="제목 입력"value="배송문의"></dd>
+            </dl>
+        </div>
+        <div class="info">
+            <dl>
+                <dt>작성자</dt>
+                <dd><input type="text" placeholder="작성자 입력"value="박지영"></dd>
+            </dl>
+            <dl>
+                <dt>비밀번호</dt>
+                <dd><input type="password" placeholder="비밀번호 입력"value="1234"></dd>
+            </dl>
+        </div>
+        <div class="cont">
+        <textarea placeholder="내용 입력"style="height:300px; width:800px;">
+2월 27일에 주문했는데 언제 받을 수 있나요?
+2월 27일에 주문했는데 언제 받을 수 있나요?
+2월 27일에 주문했는데 언제 받을 수 있나요?
+2월 27일에 주문했는데 언제 받을 수 있나요?
+        </textarea>
+        </div>
+    </div>
+
+
+    <div class="CSButton">
+        <a href="CSview.html" class="Btn">수정완료</a>
+        <a href="CScenter.html" class="Btn">취소</a>
+    </div>
+
+
+
+    <aside id="rightSideBar" include-html="./layout/rightSideBar.html"></aside>
+
+    <footer id="footer" include-html="./layout/footer.html"></footer>
+</div>
+
+
+
+</body>
+
+<script>
+    includeHTML();
+    changeLoginBtn();
+    setItemDB();
+</script>
+
+</html>
