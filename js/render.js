@@ -25,6 +25,7 @@ function renderProduct(model, length, JSONKey, condition) {
                 let itemLiA = document.createElement("li");
                 let itemLiB = document.createElement("li");
                 let itemLiC = document.createElement("li");
+                let itemAHref = document.createElement("a");
 
                 //각 오브젝트 attribute 수정
                 itemUl.setAttribute("class", "best_items");
@@ -34,21 +35,26 @@ function renderProduct(model, length, JSONKey, condition) {
                 imgSrc.src = "../css/image/" + DB.image1 + ".jpg";
                 imgSrc.width = 270;
                 imgSrc.height = 380;
+                imgSrc.name = DB.itemNumber;
                 itemLiA.setAttribute("class", "a");
+                itemLiA.setAttribute("name", DB.itemNumber);
                 itemLiA.innerText = DB.name;
                 itemLiB.setAttribute("class", "b");
                 itemLiB.innerText = DB.price;
                 itemLiC.setAttribute("class", "c");
-
+                itemAHref.href = "detail_view.html";
 
                 //자식노드로 삽입
                 divBox.appendChild(itemUl);
                 itemUl.appendChild(itemInput);
-                itemUl.appendChild(itemLiImg);
                 itemLiImg.appendChild(imgSrc);
+                itemAHref.appendChild(itemLiImg);
+                itemUl.appendChild(itemAHref);
                 itemUl.appendChild(itemLiA);
                 itemUl.appendChild(itemLiB);
                 itemUl.appendChild(itemLiC);
+
+
 
             } else {
                 continue;
@@ -93,10 +99,9 @@ function renderTraining() {
 }
 
 
-function renderDetail() {
+function renderDetail(value) {
 
-
-
+getCookie("clickId");
 
 }
 

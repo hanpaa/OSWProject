@@ -11,9 +11,8 @@
             crossorigin="anonymous"></script>
     <script src="../js/includeHTML.js"></script>
     <script src="../js/cookieSession.js"></script>
-
     <script src="../js/render.js"></script>
-
+    <script src="../js/manageItem.js"></script>
 
 </head>
 <body>
@@ -55,6 +54,16 @@
             <h2>전체상품</h2>
             <div class="clear"></div>
 
+
+            <input type="checkbox" name ="chooseItem"  value = 0>
+            <ul class="best_items">
+                <li><img src="../css/image/product1_1.jpg" width="270" height="380" name="1" onclick="location.href='detail_view.html'"></li>
+                <li class="a" name = "1" onclick="location.href='detail_view.html'">에어리 레깅스</li>
+                <li class="b">29,000원</li>
+                <li class="c">리뷰 <span>42</span> 평점 <span>4.1</span></li>
+            </ul>
+
+
         </div>
 
     </section>
@@ -67,11 +76,10 @@
 <script>
     includeHTML();
     changeLoginBtn();
-
     renderNew();
-
+    nameClickListner();
 
 </script>
-<script src="../js/manageItem.js"></script>
+
 
 </html>
