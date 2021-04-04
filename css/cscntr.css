@@ -1,0 +1,350 @@
+@charset "utf-8";
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#mainContainer {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*header css*/
+#header {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+
+#headerLogin{
+    float: right;
+}
+
+#headerLogin ul li{
+    list-style: none;
+    color: black;
+    background: white;
+    float: right;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#headerLogin .login-menu{
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100px;
+}
+
+#header .logo{
+    float: left;
+    color: darkslateblue;
+    font-size: 50px;
+    font-weight: bold;
+    background: red;
+}
+
+/*#headerLogout{*/
+/*    float: right;*/
+/*}*/
+
+/*#headerLogout ul li{*/
+/*    list-style: none;*/
+/*    color: black;*/
+/*    background: white;*/
+/*    float: right;*/
+/*    vertical-align: middle;*/
+/*    text-align: center;*/
+/*}*/
+
+/*#headerLogout .logout-menu{*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*    display: block;*/
+/*    width: 100px;*/
+/*}*/
+/*nav css*/
+nav#nav-menu {
+    height: 30px;
+    width: 100%;
+    padding-top: 30px;
+}
+
+nav#nav-menu ul li {
+    list-style: none;
+    color: black;
+    background: white;
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#nav-menu .nav-menu {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 180px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 20px 0 20px 0;
+}
+
+/*contents css*/
+#contents {
+    float: left;
+    padding: 20px;
+    height: 500px;
+    width: 100%;
+}
+
+
+/*RSB contents*/
+/*#rightSideBar {
+    float: right;
+    background: khaki;
+    width: 15%;
+}*/
+
+
+/*footer contents*/
+#footer {
+    background: antiquewhite;
+    padding: 20px;
+    clear: both;
+    margin-top: 3000px;
+}
+
+/*/*/
+
+
+#boardTitle > h3{
+    width:100%;
+    height:50px;
+    font-size: 20pt;
+    padding:10px 15px;
+    vertical-align:center;
+    margin-top:100px;
+    text-align: left;
+}
+#boardTitle > h4{
+    width:100%;
+    padding:10px 15px 10px 15px;
+    font-size:10pt;
+}
+.boardList{
+    width:100%;
+    border-top:3px solid #000;
+    margin-top:15px;
+}
+.boardList > div.boardTop{
+    border-bottom:2px solid #000;
+    text-align: center;
+}
+.boardList > div{
+    border-bottom:1px solid #999999;
+    text-align:center;
+    margin-left: 10px;
+    margin-right:10px;
+}
+.boardList > div > div .title .a {
+    color:#000;
+}
+.boardList > div:last-child{
+    border-bottom:2px solid #000;
+}
+.boardList > div > div{
+    display: inline-block;
+    vertical-align:middle;
+    text-align:center;
+    padding:15px 0;
+}
+.boardList > div.boardTop > div{
+    font-weight:600;
+}
+.boardList .num{
+    width:7%;
+}
+.boardList .title{
+    width:65%;
+    text-align: left;
+    color: #000;
+}
+.boardList .boardTop .title{
+    text-align: center;
+}
+.boardList .writer{
+    width:8%;
+}
+.boardList .date{
+    width:10%;
+}
+.boardPage{
+    margin-top:30px;
+    text-align: center;
+}
+.boardPage a {
+    display:inline-block;
+    width:25px;
+    height:25px;
+    color:#999;
+}
+.boardPage a .Btn {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+.boardPage a.num.on {
+    color:#000;
+    font-weight:600;
+    border-bottom: 1px solid black;
+}
+
+.CSButton {
+    margin-top: 50px;
+    vertical-align:middle;
+    text-align: right;
+    padding-right: 30px;
+}
+.CSButton a {
+    display: inline-block;
+    width:70px;
+    height: 30px;
+    margin:10px 0;
+    vertical-align:middle;
+    text-align: center;
+    color:#000;
+    border-bottom:2px solid #000;
+}
+
+.boardView {
+    width: 100%;
+    border-top: 2px solid #000;
+}
+
+.boardView .viewTitle {
+    padding: 20px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 2rem;
+}
+
+.boardView .viewInfo {
+    padding: 15px;
+    border-bottom: 1px solid #999;
+    font-size: 0;
+}
+
+.boardView .viewInfo dl {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.boardView .viewInfo dl:first-child {
+    padding-left: 0;
+}
+
+.boardView .viewInfo dl::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 13px;
+    background: #ddd;
+}
+
+.boardView .viewInfo dl:first-child::before {
+    display: none;
+}
+
+.boardView .viewInfo dl dt {
+    display: inline-block;
+    /*font-size: 1.4rem;*/
+}
+
+.boardView .viewInfo dl dd {
+    display: inline-block;
+    /*font-size: 1.4rem;*/
+    margin-left: 10px;
+    color: #888;
+}
+
+.boardView .viewContent {
+    padding:15px;
+    border-bottom: 1px solid #000;
+    line-height: 160%;
+    /*font-size: 1.4rem;*/
+}
+
+.boardWrite {
+    width:100%;
+    border-top: 2px solid #000;
+
+}
+.boardWrite .title,
+.boardWrite .info{
+    padding: 15px;
+}
+.boardWrite .info{
+    border-top: 1px solid #888888;
+    border-bottom: 1px solid #000;
+    font-size: 0;
+
+}
+.boardWrite .info dl{
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+}
+.boardWrite .title dl{
+    font-size: 0;
+}
+
+.boardWrite .title dt,
+.boardWrite .title dd,
+.boardWrite .info dt,
+.boardWrite .info dd {
+    display: inline-block;
+    vertical-align: middle;
+    /*font-size: 1.4rem;*/
+}
+
+.boardWrite .title dt,
+.boardWrite .info dt {
+    width:100px;
+}
+.boardWrite .title dd {
+    width:850px;
+}
+
+.boardWrite .title input[type="text"],
+.boardWrite .info input[type="text"],
+.boardWrite .info input[type="password"] {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.boardWrite .title input[type="text"] {
+    width:80%;
+}
+
+.boardWrite .cont {
+    border-bottom: 1px solid #000;
+}
+
+.board_write .cont textarea {
+    display: block;
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 0;
+    resize: vertical;
+}
