@@ -101,7 +101,12 @@ function renderTraining() {
 
 function renderDetail(value) {
 
-getCookie("clickId");
+if(getCookie("clickId")===null){
+    alert('잘못된 접근입니다.');
+    window.location.href = "index.html"
+}else{
+
+}
 
 }
 
