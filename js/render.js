@@ -16,7 +16,7 @@ function renderProduct(model, length, JSONKey, condition) {
 
             if (DB[JSONKey] == condition) {
 
-                // 렌더링 할 html 오브젝트  생
+                // 렌더링 할 html 오브젝트  생성
                 let divBox = document.getElementById("divBox");
                 let itemUl = document.createElement("ul");
                 let itemInput = document.createElement("input");
@@ -26,7 +26,7 @@ function renderProduct(model, length, JSONKey, condition) {
                 let itemLiB = document.createElement("li");
                 let itemLiC = document.createElement("li");
 
-
+                //각 오브젝트 attribute 수정
                 itemUl.setAttribute("class", "best_items");
                 itemInput.setAttribute("type", "checkbox");
                 itemInput.setAttribute("name", "chooseItem");
@@ -41,6 +41,7 @@ function renderProduct(model, length, JSONKey, condition) {
                 itemLiC.setAttribute("class", "c");
 
 
+                //자식노드로 삽입
                 divBox.appendChild(itemUl);
                 itemUl.appendChild(itemInput);
                 itemUl.appendChild(itemLiImg);
@@ -91,6 +92,13 @@ function renderTraining() {
 
 }
 
+
+function renderDetail() {
+
+
+
+
+}
 
 
 // function renderProfile() {
