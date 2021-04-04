@@ -37,7 +37,7 @@ const itemDB = {
             "image2" : "product3_2",
             "image3" : "product3_3",
             "new" : "0",
-            "detail" : "가볍고 탄탄한 sweethome의 신작입니다."
+            "detail" : "이건 사실상 물통 광고지 않나"
         },
         {"itemNumber" : "3",
             "category" : "top",
