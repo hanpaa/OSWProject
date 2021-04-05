@@ -166,13 +166,30 @@ if(getCookie("clickId")===null){
     productImages.appendChild(itemImage3);
 
 
-
-
-
-
-
+}
 
 }
+
+
+function renderMyBag() {
+
+    try{
+        let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
+        let currentUser = getCookie("currentUser");
+        let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userItemList")))));
+    }catch (e) {
+        alert('잘못된 접근입니다.');
+        window.location.href="index.html";
+    }
+
+    let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
+    let currentUser = getCookie("currentUser");
+    let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userItemList")))));
+
+
+
+
+
 
 }
 
