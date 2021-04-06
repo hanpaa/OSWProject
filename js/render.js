@@ -1,4 +1,14 @@
-
+/**
+ * @author 최제현
+ * @date 2021/04/03
+ * @param model
+ * @param length
+ * @param JSONKey
+ * @param condition
+ *
+ * 각 카테고리별 상품을 자동으로 html출력해주는 함수
+ * 04/04 수정 localStorage에 있는 모든 상품 출력에서 카테고리별 출력으로 수정 *
+ */
 function renderProduct(model, length, JSONKey, condition) {
 
         for(let i = 0; i<length; i++) {
@@ -98,7 +108,13 @@ function renderTraining() {
 
 }
 
-
+/**
+ * @author 최제현
+ * @date 2021/04/04
+ * @param value
+ *
+ * 상세정ㅇ보 페이지 html생성하는 함수.
+ */
 function renderDetail(value) {
 
 if(getCookie("clickId")===null){
@@ -170,7 +186,12 @@ if(getCookie("clickId")===null){
 
 }
 
-
+/**
+ * @author 최제현
+ * @date 2021/04/05
+ *
+ * 장바구니 페이지에 html를 생성하는 함수
+ */
 function renderMyBag() {
 
     try{

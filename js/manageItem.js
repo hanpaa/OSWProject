@@ -16,6 +16,7 @@ function setItemDB() {
  * @date 2021/03/27
  *
  * user가 check한 Checkbox를 찾아 해당하는 item의 이름을 localStorage에 저장
+ * 04/03 수정 DB 없을시 예외처리, 장바구니 물건 추가시 중복처리, 버그 수정
  */
 function getChooseItem() {
 
