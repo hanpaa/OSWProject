@@ -1,132 +1,9 @@
 @charset "utf-8";
 
-*{
-    font-family: 'Noto Sans KR', sans-serif;
-    list-style-type: none;
-    text-decoration: none;
-    border-collapse: collapse;
-    margin: 0px;
-    padding: 0px;
-}
-
-div#mainContainer {
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/*header css*/
-#header {
-    position: relative;
-    padding: 20px;
-    width: 100%;
-}
-
-#headerLogin{
-    float: right;
-}
-
-#headerLogin ul li{
-    list-style: none;
-    color: black;
-    background: white;
-    float: right;
-    vertical-align: middle;
-    text-align: center;
-    margin-top: 100px;
-}
-
-#headerLogin .login-menu{
-    text-decoration: none;
-    color: black;
-    display: block;
-    width: 100px;
-}
-
-#header .logo{
-    float: left;
-    color: darkslateblue;
-    font-size: 50px;
-    font-weight: bold;
-    background: red;
-}
-
-/*#headerLogout{*/
-/*    float: right;*/
-/*}*/
-
-/*#headerLogout ul li{*/
-/*    list-style: none;*/
-/*    color: black;*/
-/*    background: white;*/
-/*    float: right;*/
-/*    vertical-align: middle;*/
-/*    text-align: center;*/
-/*}*/
-
-/*#headerLogout .logout-menu{*/
-/*    text-decoration: none;*/
-/*    color: black;*/
-/*    display: block;*/
-/*    width: 100px;*/
-/*}*/
-/*nav css*/
-nav#nav-menu {
-    height: 30px;
-    width: 100%;
-    padding-top: 30px;
-}
-
-nav#nav-menu ul li {
-    list-style: none;
-    color: black;
-    background: white;
-    float: left;
-    vertical-align: middle;
-    text-align: center;
-}
-
-#nav-menu .nav-menu {
-    text-decoration: none;
-    color: black;
-    display: block;
-    width: 180px;
-    font-size: 17px;
-    font-weight: bold;
-    margin: 20px 0 20px 0;
-}
-
-/*contents css*/
-#contents {
-    float: left;
-    padding: 20px;
-    height: 500px;
-    width: 100%;
-}
-
-
-/*RSB contents*/
-/*#rightSideBar {
-    float: right;
-    background: khaki;
-    width: 15%;
-}*/
-
-
-/*footer contents*/
-#footer {
-    background: antiquewhite;
-    padding: 20px;
-    clear: both;
-    margin-top: 3000px;
-}
-
-/*/*/
-
-
 #boardTitle > h3{
     width:100%;
     height:50px;
-    font-size: 20pt;
+    font-size: 22pt;
     padding:10px 15px;
     vertical-align:center;
     margin-top:100px;
@@ -134,8 +11,8 @@ nav#nav-menu ul li {
 }
 #boardTitle > h4{
     width:100%;
-    padding:10px 15px 10px 15px;
-    font-size:10pt;
+    padding:10px 10px 10px 15px;
+    font-size:13pt;
 }
 .boardList{
     width:100%;
@@ -230,13 +107,16 @@ nav#nav-menu ul li {
 .boardView .viewTitle {
     padding: 20px 15px;
     border-bottom: 1px solid #ddd;
-    font-size: 2rem;
+    font-size: 20px;
+    font-weight: 600;
+
 }
 
 .boardView .viewInfo {
     padding: 15px;
     border-bottom: 1px solid #999;
-    font-size: 0;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .boardView .viewInfo dl {
@@ -280,7 +160,7 @@ nav#nav-menu ul li {
     padding:15px;
     border-bottom: 1px solid #000;
     line-height: 160%;
-    /*font-size: 1.4rem;*/
+    font-size: 18px;
 }
 
 .boardWrite {

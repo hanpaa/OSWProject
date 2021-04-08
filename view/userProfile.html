@@ -1,42 +1,67 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-ico">
     <meta name="theme-color" content="#ffffff">
     <title>SweetHome</title>
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="../css/slide.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <script src="../js/includeHTML.js"></script>
     <script src="../js/cookieSession.js"></script>
 </head>
 
 <body>
-<div id="mainContainer">
-    <header id="header">
-        <div id="headerLogin">
-            <ul>
-                <li><a class="login-menu" id ="registerBtn" href="register.html">회원가입</a></li>
-                <li><a class="login-menu" id ="loginBtn" href="login.html">로그인</a></li>
-                <li><a class="login-menu" id ="logoutBtn" onclick="logout()">로그아웃</a></li>
-                <li><a class="login-menu" id ="bagBtn" href="mybag.html">장바구니</a></li>
-                <li><a class="login-menu" id ="profileBtn" href="userProfile.html">내 정보</a></li>
-            </ul>
-        </div>
-        <div id="logo">
-            <h1><a href="index.html">Sweet Home</a></h1>
-        </div>
-    </header>
+<header>
+    <div class="headerLogin">
+        <ul>
+            <li><a id ="registerBtn" href="register.html">회원가입</a></li>
+            <li><a id ="loginBtn" href="login.html">로그인</a></li>
+            <li><a id ="logoutBtn" onclick="logout()">로그아웃</a></li>
+            <li><a id ="bagBtn" href="mybag.html">장바구니</a></li>
+            <li><a id ="profileBtn" href="userProfile.html">내 정보</a></li>
+            <li><a id="csBtn" href="CScenter.html">고객센터</a>
+                <ul class="csBtn_sub">
+                    <li><a href="CScenter.html">문의하기</a></li>
+                    <li><a href="CSnotice.html">공지사항</a></li>
+                    <li><a href="CSfaq.html">자주묻는질문</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <nav id="nav-menu" include-html="./layout/nav_menu.html"></nav>
+    <div class="logo">
+        <ul>
+            <li><a href="index.html">SWEETHOME</a></li>
+        </ul>
+    </div>
 
-    <section id="contents">
+    <div class="nav_menu">
+        <ul>
+            <li><a class="nav-menu" href="best_product.html">베스트</a></li>
+            <li><a class="nav-menu" href="new_product.html">신상품</a></li>
+            <li><a class="nav-menu" href="top_product.html">상의</a></li>
+            <li><a class="nav-menu" href="bottom_product.html">하의</a></li>
+            <li><a class="nav-menu" href="training_product.html">홈트용품</a></li>
+        </ul>
+    </div>
+</header>
+
+<div id="contents">
+    <div class="section1">
         <h2>user profile</h2>
-    </section>
-
-    <aside id="rightSideBar" include-html="./layout/rightSideBar.html"></aside>
-
-    <footer id="footer" include-html="./layout/footer.html"></footer>
+    </div>
 </div>
+
+<footer>
+    <div>
+        <span class = "company">회사명 : (주)SWEETHOME</span>
+        <span class = "owner">최제현, 서언주, 박지영</span>
+        <span class = "addr">오픈소스 웹 소프트웨어</span>
+    </div>
+</footer>
 </body>
 
 <script>

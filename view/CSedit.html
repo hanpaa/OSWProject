@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/cscntr.css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-ico">
     <meta name="theme-color" content="#ffffff">
     <title>SweetHome</title>
@@ -25,7 +26,13 @@
                 <li><a class="login-menu" id ="logoutBtn" onclick="logout()">로그아웃</a></li>
                 <li><a class="login-menu" id ="bagBtn" href="mybag.html">장바구니</a></li>
                 <li><a class="login-menu" id ="profileBtn" href="userProfile.html">내 정보</a></li>
-                <li><a class="login-menu" id="csBtn" href="CScenter.html">고객센터</a>
+                <li><a class="login-menu" id="csBtn">고객센터</a>
+                    <ul class="csBtn_sub">
+                        <li><a href="CScenter.html">문의하기</a></li>
+                        <li><a href="CSnotice.html">공지사항</a></li>
+                        <li><a href="CSfaq.html">자주묻는질문</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div id="logo">
@@ -36,7 +43,7 @@
     <nav id="nav-menu" include-html="./layout/nav_menu.html"></nav>
 
     <section id="boardTitle">
-        <h2>고객센터</h2>
+        <h3>고객센터</h3>
     </section>
 
     <div class="boardWrite">
