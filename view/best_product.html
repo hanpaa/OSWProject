@@ -53,35 +53,76 @@
     </div>
 </header>
 
-
-<div id="contents">
-    <div class="section1">
-        <div id = "divBox" class="box">
-            <h2>전체상품</h2>
-            <div class="clear"></div>
-
-            <button type="button" onclick="getChooseItem()">장바구니 담기</button>
-
-
-        <div class="box">
-            <h2>전체상품</h2>
-            <div class="clear"></div>
-
-
-            <input type="checkbox" name ="chooseItem"  value = 0>
-            <ul class="best_items">
-                <li><img src="../css/image/product1_1.jpg" width="270" height="380" name="1" onclick="location.href='detail_view.html'"></li>
-                <li class="a" name = "1" onclick="location.href='detail_view.html'">에어리 레깅스</li>
-                <li class="b">29,000원</li>
-                <li class="c">리뷰 <span>42</span> 평점 <span>4.1</span></li>
-            </ul>
-
-
-        </div>
-
+<!--이전 html ul부분이 실제 렌더링 되는부-->
+<section id="contents">
+    <div class="best_bg">
+        <div class="best_intro">
+            <h2>SweetHome</h2>
+            <h2>BEST PRODUCT</h2>
         </div>
     </div>
-</div>
+    <div id = "divBox" class="box">
+        <h2>전체상품</h2>
+        <div class="clear"></div>
+
+        <ul class="best_items">
+            <li><img src="../css/image/product1_1.jpg" width="270" height="380"></li>
+            <li class="a">에어리 레깅스</li>
+            <li class="b">29,000원</li>
+            <li class="c">리뷰 <span>42</span> 평점 <span>4.1</span></li>
+        </ul>
+
+        <ul class="best_items">
+            <li><img src="../css/image/product1_1.jpg" width="270" height="380"></li>
+            <li class="a">에어리 레깅스</li>
+            <li class="b">29,000원</li>
+            <li class="c">리뷰 <span>42</span> 평점 <span>4.1</span></li>
+        </ul>
+
+        <ul class="best_items">
+            <li><img src="../css/image/product1_1.jpg" width="270" height="380"></li>
+            <li class="a">에어리 레깅스</li>
+            <li class="b">29,000원</li>
+            <li class="c">리뷰 <span>42</span> 평점 <span>4.1</span></li>
+        </ul>
+
+        <ul class="best_items">
+            <li><img src="../css/image/product1_1.jpg" width="270" height="380"></li>
+            <li class="a">에어리 레깅스</li>
+            <li class="b">29,000원</li>
+            <li class="c">리뷰 <span>42</span> 평점 <span>4.1</span></li>
+        </ul>
+    </div>
+
+<!--버그 수정 요망부분-->
+<!--<div id="contents">-->
+<!--    <div class="section1">-->
+<!--        <div id = "divBox" class="box">-->
+<!--            <h2>전체상품</h2>-->
+<!--            <div class="clear"></div>-->
+
+<!--            <button type="button" onclick="getChooseItem()">장바구니 담기</button>-->
+
+
+<!--        <div class="box">-->
+<!--            <h2>전체상품</h2>-->
+<!--            <div class="clear"></div>-->
+
+
+<!--            <input type="checkbox" name ="chooseItem"  value = 0>-->
+<!--            <ul class="best_items">-->
+<!--                <li><img src="../css/image/product1_1.jpg" width="270" height="380" name="1" onclick="location.href='detail_view.html'"></li>-->
+<!--                <li class="a" name = "1" onclick="location.href='detail_view.html'">에어리 레깅스</li>-->
+<!--                <li class="b">29,000원</li>-->
+<!--                <li class="c">리뷰 <span>42</span> 평점 <span>4.1</span></li>-->
+<!--            </ul>-->
+
+
+<!--        </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
     <footer>
         <div>
@@ -95,7 +136,7 @@
 <script>
     includeHTML();
     changeLoginBtn();
-    renderNew();
+    // renderNew(); 임시적으로 자동 렌더링 삭제 
     nameClickListner();
 
 </script>
