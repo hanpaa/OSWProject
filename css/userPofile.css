@@ -1,0 +1,60 @@
+article div{
+    float : left;
+}
+
+h2 {
+    height : 50px;
+    top : 50%;
+    font-size : 30px;
+    color : black;
+    margin-top: 50px
+}
+
+#title {
+    font-size : 30px;
+    color : black;
+}
+#list {
+    margin : 10% 0 0 0;
+}
+
+#list li {
+    clear : left; width : 70%;
+    margin-left : 15%;
+    margin-right : 15%;
+    font-size : 17px;
+    height : 40px;
+    line-height : 40px;
+    color : black;
+}
+
+#list li:hover {
+    background-color : rgb(150,150,150);
+    color : white;
+}
+
+#my_left {
+    width : 20%;
+    height : 500px;
+}
+
+#my_right {
+    width : 80%;
+    height : 1000px;
+}
+#my_right > div {
+    display : none;
+}
+
+
+#my_right > .current {
+    display : inherit;
+}
+
+#my_right .user_info{
+    width: 700px;
+    height: 400px;
+    text-align: center;
+    margin: 50px 50px 0 0;
+    background: #ff8f2f;
+}

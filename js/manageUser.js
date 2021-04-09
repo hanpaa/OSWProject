@@ -12,6 +12,8 @@ function register() {
     const pw = document.getElementById('registerPassword').value;
     const userName = document.getElementById('registerUserName').value;
     const userContact = document.getElementById('registerContact').value;
+    const userAddress = document.getElementById('registerAddress').value;
+    const userMail = document.getElementById('registerMail').value;
 
 
     /*
@@ -22,7 +24,8 @@ function register() {
             //로컬스토리지 내 빈 key값이 있으면 거기에 value를 삽입합니다.
             if (localStorage.getItem(key.toString()) == null) {
                 //모든 회원정보는 JSON형태로 저장됩니다.
-                localStorage.setItem(key, JSON.stringify({id: id, password: pw, username: userName, usercontact: userContact}));
+                localStorage.setItem(key, JSON.stringify({id: id, password: pw, username: userName, contact: userContact,
+                    address: userAddress, email: userMail}));
                 alert('회원가입 완료');
                 window.location.href = "index.html";
                 break;

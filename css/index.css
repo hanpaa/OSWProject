@@ -65,13 +65,14 @@ header .nav_menu{
 
 header .nav_menu ul{
     width:1000px;
-    margin:auto;
     float: left;
+    margin-left: 50px;
 }
 
 header .nav_menu li{
     margin:5px;
     line-height:25px;
+    font-size: 17px;
 }
 
 header .nav_menu a{

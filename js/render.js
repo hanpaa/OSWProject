@@ -207,9 +207,55 @@ function renderMyBag() {
     let currentUser = getCookie("currentUser");
     let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userItemList")))));
 
+    for(let i = 0; i < myBagDB.length; i++){
+        const thisItemNumber = myBagDB[i].item;
+        const thisItem = localItemDB.items[thisItemNumber];
+
+        const divRowData = document.createElement("div");
+        divRowData.class = "row data";
+        const divSubDiv = document.createElement("div");
+        divRowData.class = "subdiv";
+        divRowData.appendChild(divSubDiv);
+        const divCheck = document.createElement("div");
+        const inputBuy = document.createElement("input");
+
+    }
 
 
 
+
+}
+
+function renderUserProfile() {
+
+    let userKey = getCookie("currentUser");
+    let thisUser = JSON.parse(localStorage.getItem(userKey.toString()));
+
+    let trProfileName = document.getElementById("profileName");
+    let trProfileNumber = document.getElementById("profileNumber");
+    let trProfileAddress = document.getElementById("profileAddress");
+    let trProfileMail = document.getElementById("profileMail");
+
+    let DBProfileName = thisUser.username;
+    let DBProfileNumber = thisUser.contact;
+    let DBprofileMail = thisUser.email;
+    let DBProfileAddress = thisUser.address;
+
+    let profileNameTd = document.createElement("td");
+    profileNameTd.innerText = DBProfileName;
+    trProfileName.appendChild(profileNameTd);
+
+    let profileNumberTd = document.createElement("td");
+    profileNumberTd.innerText = DBProfileNumber;
+    trProfileNumber.appendChild(profileNumberTd);
+
+    let profileMailTd = document.createElement("td");
+    profileMailTd.innerText = DBprofileMail;
+    trProfileMail.appendChild(profileMailTd);
+
+    let profileAddressTd = document.createElement("td");
+    profileAddressTd.innerText = DBProfileAddress;
+    trProfileAddress.appendChild(profileAddressTd);
 
 
 }
