@@ -83,7 +83,7 @@ function bagOrder() {
             if(selectedItem === null) break;
             const itemNo = selectedItem.getAttribute("ItemNo");
             const itemNum = selectedItem.getAttribute("value");
-            
+
             const newJson = JSON.stringify({itemNo : itemNum})
         }catch (e) {
             break;
