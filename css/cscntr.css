@@ -118,6 +118,9 @@
     font-size: 15px;
     font-weight: 600;
 }
+.boardView .viewInfo dt {
+    color:#000;
+}
 
 .boardView .viewInfo dl {
     position: relative;
@@ -176,11 +179,13 @@
     border-top: 1px solid #888888;
     border-bottom: 1px solid #000;
     font-size: 0;
-
+}
+.boardWrite .title dt{
+    color: #000;
 }
 .boardWrite .info dl{
     display: inline-block;
-    width: 50%;
+    width: 485px;
     vertical-align: middle;
 }
 .boardWrite .title dl{

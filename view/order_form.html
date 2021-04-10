@@ -2,16 +2,16 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cscntr.css">
-    <link rel="stylesheet" href="../css/index.css" type="text/css">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-ico">
     <meta name="theme-color" content="#ffffff">
     <title>SweetHome</title>
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="../css/order_form.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <script src="../js/includeHTML.js"></script>
     <script src="../js/cookieSession.js"></script>
-    <script src="../js/manageItem.js"></script>
+    <script src="../js/bag.js"></script>
 </head>
 
 <body>
@@ -32,7 +32,6 @@
             </li>
         </ul>
     </div>
-
     <div class="logo">
         <ul>
             <li><a href="index.html">SWEETHOME</a></li>
@@ -49,47 +48,50 @@
         </ul>
     </div>
 </header>
-<div id="contents">
-    <section id="boardTitle">
-        <h3>고객센터</h3>
-        <h4>최근 6개월간의 문의 내역 입니다. </h4>
-    </section>
-    <div class="boardViewWrap">
-        <div class="boardView">
-            <div class="viewTitle">
-                배송문의
-            </div>
-            <div class="viewInfo">
-                <dl>
-                    <dt>번호</dt>
-                    <dd>1245</dd>
-                </dl>
-                <dl>
-                    <dt>작성자</dt>
-                    <dd>박지영</dd>
-                </dl>
-                <dl>
-                    <dt>작성일</dt>
-                    <dd>21-03-02</dd>
-                </dl>
+<section id="contents">
+    <h3>주문서 작성</h3>
+        <form name="makeorder" id="makeorder" action="#">
+            <div class="orderer_info">
+                <div class="주문자명">주문자명</div>
+                <div class="주문자 전화번호">전화번호</div>
             </div>
 
-            <div class="viewContent">
-                2월 27일에 주문했는데 언제 받을 수 있나요? </br>
-                2월 27일에 주문했는데 언제 받을 수 있나요?
+            <div class="address_info">
+                <div class="수령인">수령인</div>
+                <div class="수령인 전화번호">전화번호</div>
+                <div class="배송지">배송지</div>
+                <div class="배송메모">배송메모
+                    <select class="delivery_memo" size="1" >
+                        <option value="memo1">배송 전 미리 연락 바랍니다.</option>
+                        <option value="memo1">부재 시 경비실에 맡겨주세요.</option>
+                        <option value="memo1">부재 시 경비실에 맡겨주세요.</option>
+                        <option value="memo1">무인택배함에 보관해주세요.</option>
+                        <option value="memo1">문 앞에 놔주세요.</option>
+                    </select>
+                </div>
+
             </div>
 
-        </div>
-    </div>
+            <div class="payment_info">
+                <div class="결제방식">카드결제 계좌간편결제 무통장입금 휴대폰결제
+                </div>
+                <div class="주문금액">주문금액</div>
+                <div class="상품금액">수령인</div>
+                <div class="배송비">수령인</div>
 
-    <div class="CSButton">
-        <a href="CSedit.html" class="Btn">글수정</a>
-        <a href="CScenter.html">목록</a>
-    </div>
+            </div>
+            <div>
+                <button class="pay">주문
 
-    <footer id="footer" include-html="./layout/footer.html"></footer>
-</div>
-</div>
+                </button>
+                <button class="paycancel">취소
+
+                </button>
+            </div>
+        </form>
+
+</section>
+
 <footer>
     <div>
         <span class = "company">회사명 : (주)SWEETHOME</span>
@@ -97,12 +99,14 @@
         <span class = "addr">오픈소스 웹 소프트웨어</span>
     </div>
 </footer>
+
 </body>
 
 <script>
     includeHTML();
     changeLoginBtn();
-    setItemDB();
 </script>
+<script src="../js/manageItem.js"></script>
+
 
 </html>

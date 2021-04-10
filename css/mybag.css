@@ -1,3 +1,14 @@
+@charset "utf-8";
+
+h3 {
+    font-size: 22pt;
+    width:100%;
+    height:50px;
+    padding:10px 15px;
+    vertical-align:center;
+    margin-top:100px;
+    text-align: left;
+}
 
 .basketdiv {
     width: 100%;
@@ -5,6 +16,7 @@
     float: left;
     font-size: 0.9375em;
     margin-bottom: 20px;
+
 }
 .basketdiv .row.head {
     border-bottom: 2px solid #888;
@@ -13,7 +25,7 @@
     font-weight: 500;
 }
 .basketdiv .data {
-    border-bottom: 1px dashed #888;
+    border-bottom: 1px solid #e0e0e0;
     box-sizing: border-box;
     cursor: pointer;
     float: left;
@@ -86,7 +98,6 @@
 .basketdiv .sum {
     width: 34%;
     max-width: 80px;
-    color: #0000aa;
 }
 .basketdiv .point {
     width: 50%;
@@ -101,7 +112,7 @@
 
 .basketdiv2 .sum {
     width: 25%;
-    color: #0000aa;
+    /*color: #0000aa;*/
 }
 
 .basketdiv2 .point {
@@ -114,8 +125,10 @@
     text-align: left !important;
     line-height: 1.2 !important;
 }
-.basketdiv .data .price, .basketdiv .data .sum, .basketdiv .data .point {
-    text-align: right;
+.basketdiv .data .price,
+.basketdiv .data .sum,
+.basketdiv .data .point {
+    /*text-align: right;*/
 }
 .baseform > tbody > tr > td:first-child {
     width: 100px;
@@ -131,17 +144,23 @@
 .buttongroup.center {
     text-align: center;
 }
-.buttongroup input[type=text], .buttongroup input[type=password] {
+.buttongroup input[type=text],
+.buttongroup input[type=password] {
     height: 30px;
 }
 .buttongroup button, .buttongroup a {
     margin-right: 5px;
 }
-.buttongroup button:last-child, .buttongroup a:last-child {
+.buttongroup button:last-child,
+.buttongroup a:last-child {
     margin-right: 0;
 }
 
-.abutton, .abutton:link, .abutton:visited, .abutton:active, input[type=button] {
+.abutton,
+.abutton:link,
+.abutton:visited,
+.abutton:active,
+input[type=button] {
     background-color: #383838;
     border: 1px solid #888888;
     color: #ffffff;
@@ -157,20 +176,23 @@
 }
 
 .abutton-alt {
-    background-color: #d3e2c6;
+    background-color: #b00;
 }
 
 .red {
     color:#b00;
 }
 .blue {
-    color: #0075ff;
+    /*color: #0075ff;*/
 }
-.basketrowcmd, .sumcount, .summoney{
+.basketrowcmd,
+.sumcount,
+.summoney{
     text-align: right;
     margin-bottom: 10px;
 }
-.sumcount, .summoney{
+.sumcount,
+.summoney{
     font-size: 1.25em;
     font-weight: bold;
 }
@@ -180,7 +202,8 @@
 .buttongroup a{
     text-decoration: none;
 }
-.cmd a, .cmd span {
+.cmd a,
+.cmd span {
     padding: 12px 30px;
     box-sizing: border-box;
     margin-top: 10px;
@@ -189,14 +212,16 @@
     background-color: #f4f4f4;
     border: 1px solid #e0e0e0;
     text-align: center;
-}
-.cmd.small a, .cmd.small span {
+}/*선택상품주문 버튼*/
+.cmd.small a,
+.cmd.small span {
     padding: 6px 20px;
     font-size: 0.8125em;
 }
 
 .orderform .p_num {
-    text-align: right;
+    text-align: center;
     width: 40px;
-    font-size: 1em;
+
+    border:none;
 }
