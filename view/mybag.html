@@ -102,16 +102,16 @@
 
             <div class="right-align basketrowcmd">
                 <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delCheckedItem();">선택상품삭제</a>
-                <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
+                <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delAllItem();">개수 초기화</a>
             </div>
 
-            <div class="bigtext right-align sumcount" id="sum_p_num">상품개수: 0개</div>
+            <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 0개</div>
             <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 0원</div>
 
             <div id="goorder" class="">
                 <div class="clear"></div>
                 <div class="buttongroup center-align cmd">
-                    <a href="order-form.html">선택상품 주문</a>
+                    <a href="#" onclick="bagOrder()">선택상품 주문</a>
 <!--                    "javascript:void(0);"-->
                 </div>
             </div>
