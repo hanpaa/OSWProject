@@ -3,27 +3,42 @@ let basket = {
     totalPrice: 0,
     //체크한 장바구니 상품 비우기
     delCheckedItem: function(){
-        document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
-            item.parentElement.parentElement.parentElement.remove();
-        });
-        //AJAX 서버 업데이트 전송
+        const checkedList = document.getElementsByName("buy");
+        const currentUser = getCookie("currentUser");
+        const userItemList = JSON.parse(localStorage.getItem(currentUser+"userItemList"));
 
-        //전송 처리 결과가 성공이면
+        for(let i =0; i < checkedList.length; i++){
+
+            let thisItemid = checkedList[i].value;
+
+            if(checkedList[i].checked == true){
+                for(let i =0; i < userItemList.length; i++) {
+                    if (userItemList[i].item === thisItemid) {
+                        delete userItemList.splice(i, 1);
+                    }
+                }
+            }
+
+        }
+
+        const newJson = JSON.stringify(userItemList);
+        localStorage.setItem(currentUser+"userItemList", newJson);
+
         this.reCalc();
         this.updateUI();
+
+        window.location.href = 'mybag.html';
+        //AJAX 서버 업데이트 전송
+
     },
     //장바구니 전체 비우기
     delAllItem: function(){
-        document.querySelectorAll('.row.data').forEach(function (item) {
-            item.remove();
-        });
-        //AJAX 서버 업데이트 전송
 
-        //전송 처리 결과가 성공이면
-        this.totalCount = 0;
-        this.totalPrice = 0;
+        window.location.href = 'mybag.html';
+
         this.reCalc();
         this.updateUI();
+
     },
     //재계산
     reCalc: function(){
@@ -60,8 +75,22 @@ let basket = {
         this.reCalc();
         this.updateUI();
     },
-    delItem: function () {
-        event.target.parentElement.parentElement.parentElement.remove();
+    delItem: function (thisItemid) {
+
+        const currentUser = getCookie("currentUser").toString();
+        const userItemList = JSON.parse(localStorage.getItem(currentUser+"userItemList"));
+
+        for(let i =0; i < userItemList.length; i++){
+            if(userItemList[i].item === thisItemid){
+                delete userItemList.splice(i, 1);
+            }
+        }
+
+        const newJson = JSON.stringify(userItemList);
+        localStorage.setItem(currentUser+"userItemList", newJson);
+        window.location.href = 'mybag.html';
+
+
     }
 }
 
@@ -76,6 +105,35 @@ Number.prototype.formatNumber = function(){
 
 function bagOrder() {
 
+    let choosedItemList = new Array();
+    const currentUser = getCookie("currentUser");
+    const storageName = currentUser + "userBuyItemList" ;
+
+    // let itemJson = {};
+
+    // //default 갯수는 1개입니다.
+
+    for(let i = 1; i < 99; i++){
+
+        try{
+            const selectedItem = document.getElementById("p_num"+i);
+            const itemNo = selectedItem.getAttribute("ItemNo");
+            const itemNum = selectedItem.getAttribute("value");
+        }catch (e) {
+            continue;
+        }
+        const selectedItem = document.getElementById("p_num"+i);
+        const itemNo = selectedItem.getAttribute("ItemNo");
+        const itemNum = selectedItem.getAttribute("value");
+        if(itemNum == 0) continue;
+        const sumPrice = document.getElementById("sum_p_price").innerText;
+        const totalnumber = document.getElementById("sum_p_num").innerText;
+        let itemJson = {itemNo : itemNo, itemNum : itemNum};
+        choosedItemList.push(itemJson);
+        const newJson = JSON.stringify({items : choosedItemList, totalmoney : sumPrice, totalnumber : totalnumber});
+        localStorage.setItem(storageName, newJson);
+
+    }
 
 
 

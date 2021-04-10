@@ -197,8 +197,10 @@ function renderMyBag() {
 
     try{
         let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
+        localItemDB.length;
         let currentUser = getCookie("currentUser");
         let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userItemList")))));
+        myBagDB.length;
     }catch (e) {
         alert('잘못된 접근입니다.');
         window.location.href="index.html";
@@ -291,7 +293,8 @@ function renderMyBag() {
         inputPNum.size = 2;
         inputPNum.setAttribute("class", "p_num");
         inputPNum.maxLength = 4;
-        inputPNum.setAttribute("value", "1");
+        inputPNum.setAttribute("value", "0");
+        inputPNum.setAttribute("ItemNo", thisItemNumber);
         inputPNum.setAttribute("onkeyup", "javascript:basket.changePNum(" + (i+1) + ");");
         divUpdown.appendChild(inputPNum);
 
@@ -330,8 +333,11 @@ function renderMyBag() {
         divBasketCmd.setAttribute("class", "basketcmd");
         const aAbutton = document.createElement("a");
         aAbutton.setAttribute("class", "abutton");
-        aAbutton.setAttribute("onclick", "javascript:basket.delItem();");
+        aAbutton.setAttribute("id", thisItemNumber);
+        aAbutton.setAttribute("onclick", "javascript:basket.delItem(this.id);");
         aAbutton.setAttribute("href", "javascript:void(0)");
+        aAbutton.setAttribute("value", i);
+
         aAbutton.innerText = "삭제";
 
         divBasketCmd.appendChild(aAbutton);
