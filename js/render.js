@@ -191,6 +191,7 @@ if(getCookie("clickId")===null){
  * @date 2021/04/05
  *
  * 장바구니 페이지에 html를 생성하는 함수
+ * 04/10 수정 형식에 맞추어 html생성
  */
 function renderMyBag() {
 
@@ -206,18 +207,140 @@ function renderMyBag() {
     let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
     let currentUser = getCookie("currentUser");
     let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userItemList")))));
+    const divBasketDiv = document.getElementById("basket");
 
     for(let i = 0; i < myBagDB.length; i++){
         const thisItemNumber = myBagDB[i].item;
         const thisItem = localItemDB.items[thisItemNumber];
 
+        //<div class="row data">
         const divRowData = document.createElement("div");
-        divRowData.class = "row data";
-        const divSubDiv = document.createElement("div");
-        divRowData.class = "subdiv";
-        divRowData.appendChild(divSubDiv);
+        divRowData.setAttribute("class", "row data");
+
+        //<div class="subdiv">
+        const divSubDiv1 = document.createElement("div");
+        divSubDiv1.setAttribute("class", "subdiv")
+        divRowData.appendChild(divSubDiv1);
+
+        //<div class="check"><input type="checkbox" name="buy" value="260" checked="">&nbsp;</div>
         const divCheck = document.createElement("div");
+        divCheck.setAttribute("class", "check");
         const inputBuy = document.createElement("input");
+        inputBuy.type = "checkbox";
+        inputBuy.name = "buy";
+        inputBuy.setAttribute("value", thisItemNumber);
+        inputBuy.checked = "";
+        inputBuy.innerHTML = "&nbsp;";
+        divCheck.appendChild(inputBuy);
+        divSubDiv1.appendChild(divCheck);
+
+
+         // <div class="img"><img src="./img/basket1.jpg" width="60"></div>
+        const divImg = document.createElement("div");
+        divImg.setAttribute("class", "img");
+        const itemImg = document.createElement("img");
+        itemImg.src = "../css/image/" + thisItem.image1 + ".jpg";
+        itemImg.height = 60;
+        itemImg.width = 40;
+        divImg.appendChild(itemImg);
+        divSubDiv1.appendChild(divImg);
+
+        //<div class="pname">
+        const divPName = document.createElement("div");
+        divPName.setAttribute("class", "pname");
+
+        //<span>상품명</span>        const spanItemName = document.createElement("span");
+        const spanItemName = document.createElement("span");
+        spanItemName.innerText = thisItem.name;
+        divPName.appendChild(spanItemName);
+        divSubDiv1.appendChild(divPName);
+
+        //<div class="subdiv">
+        const divSubDiv2 = document.createElement("div");
+        divSubDiv2.setAttribute("class", "subdiv");
+
+
+
+        //<div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20000">20,000원</div>
+        const divBasketPrice = document.createElement("div");
+        divBasketPrice.setAttribute("class", "basketprice");
+        divBasketPrice.innerText = thisItem.price + "";
+        const inputPPrice = document.createElement("input");
+        inputPPrice.type = "hidden";
+        inputPPrice.name = "p_price";
+        inputPPrice.setAttribute("value", thisItem.price.replace(",", ""));
+        inputPPrice.setAttribute("id", "p_price" + (i+1));
+        inputPPrice.setAttribute("class", "p_price");
+
+        divBasketPrice.appendChild(inputPPrice);
+        divSubDiv2.appendChild(divBasketPrice);
+
+        //<div class="num">
+        const divNum = document.createElement("div");
+        divNum.setAttribute("class", "num");
+
+        //<div class="updown">
+        const divUpdown = document.createElement("div");
+        divUpdown.setAttribute("class", "updown");
+
+        //<input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="2" onkeyup="javascript:basket.changePNum(1);">
+        const inputPNum = document.createElement("input");
+        inputPNum.type = "text";
+        inputPNum.name = "p_num" + (i+1);
+        inputPNum.setAttribute("id", "p_num" +(i+1));
+        inputPNum.size = 2;
+        inputPNum.setAttribute("class", "p_num");
+        inputPNum.maxLength = 4;
+        inputPNum.setAttribute("value", "1");
+        inputPNum.setAttribute("onkeyup", "javascript:basket.changePNum(" + (i+1) + ");");
+        divUpdown.appendChild(inputPNum);
+
+        //span onclick
+        const spanOnclick1 = document.createElement("span");
+        spanOnclick1.setAttribute("onclick", "javascript:basket.changePNum(" + (i+1) + ");");
+
+        const iCircleUp = document.createElement("i");
+        iCircleUp.setAttribute("class", "fas fa-arrow-alt-circle-up up");
+
+        spanOnclick1.appendChild(iCircleUp);
+        divUpdown.appendChild(spanOnclick1);
+
+        const spanOnclick2 = document.createElement("span");
+        spanOnclick2.setAttribute("onclick", "javascript:basket.changePNum(" + (i+1) + ");");
+
+        const iCircleDown = document.createElement("i");
+        iCircleDown.setAttribute("class", "fas fa-arrow-alt-circle-down down");
+
+        spanOnclick2.appendChild(iCircleDown);
+        divUpdown.appendChild(spanOnclick2);
+
+        const divSum = document.createElement("div");
+        divSum.setAttribute("class", "sum");
+        divSum.innerText = thisItem.price + "원";
+
+        divNum.appendChild(divUpdown);
+        divSubDiv2.appendChild(divNum);
+        divSubDiv2.appendChild(divSum);
+        divRowData.appendChild(divSubDiv2);
+
+        const divSubDiv3 = document.createElement("div");
+        divSubDiv3.setAttribute("class", "subdiv");
+
+        const divBasketCmd = document.createElement("div");
+        divBasketCmd.setAttribute("class", "basketcmd");
+        const aAbutton = document.createElement("a");
+        aAbutton.setAttribute("class", "abutton");
+        aAbutton.setAttribute("onclick", "javascript:basket.delItem();");
+        aAbutton.setAttribute("href", "javascript:void(0)");
+        aAbutton.innerText = "삭제";
+
+        divBasketCmd.appendChild(aAbutton);
+        divSubDiv3.appendChild(divBasketCmd);
+        divRowData.appendChild(divSubDiv3);
+
+        divBasketDiv.appendChild(divRowData);
+
+
 
     }
 
