@@ -74,7 +74,9 @@ Number.prototype.formatNumber = function(){
     return nstr;
 };
 
-function order() {
+function bagOrder() {
+
+
 
 
 }
