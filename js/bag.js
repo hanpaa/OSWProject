@@ -76,7 +76,19 @@ Number.prototype.formatNumber = function(){
 
 function bagOrder() {
 
+    for(let i = 1; i < 99; i++){
 
+        try{
+            const selectedItem = document.getElementById("p_num"+i);
+            if(selectedItem === null) break;
+            const itemNo = selectedItem.getAttribute("ItemNo");
+            const itemNum = selectedItem.getAttribute("value");
+            
+            const newJson = JSON.stringify({itemNo : itemNum})
+        }catch (e) {
+            break;
+        }
 
+    }
 
 }

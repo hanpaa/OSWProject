@@ -292,6 +292,7 @@ function renderMyBag() {
         inputPNum.setAttribute("class", "p_num");
         inputPNum.maxLength = 4;
         inputPNum.setAttribute("value", "1");
+        inputPNum.setAttribute("ItemNo", thisItemNumber);
         inputPNum.setAttribute("onkeyup", "javascript:basket.changePNum(" + (i+1) + ");");
         divUpdown.appendChild(inputPNum);
 

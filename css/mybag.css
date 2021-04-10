@@ -1,14 +1,3 @@
-@charset "utf-8";
-
-h3 {
-    font-size: 22pt;
-    width:100%;
-    height:50px;
-    padding:10px 15px;
-    vertical-align:center;
-    margin-top:100px;
-    text-align: left;
-}
 
 .basketdiv {
     width: 100%;
@@ -16,7 +5,6 @@ h3 {
     float: left;
     font-size: 0.9375em;
     margin-bottom: 20px;
-
 }
 .basketdiv .row.head {
     border-bottom: 2px solid #888;
@@ -25,7 +13,7 @@ h3 {
     font-weight: 500;
 }
 .basketdiv .data {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px dashed #888;
     box-sizing: border-box;
     cursor: pointer;
     float: left;
@@ -98,6 +86,7 @@ h3 {
 .basketdiv .sum {
     width: 34%;
     max-width: 80px;
+    color: #0000aa;
 }
 .basketdiv .point {
     width: 50%;
@@ -112,7 +101,7 @@ h3 {
 
 .basketdiv2 .sum {
     width: 25%;
-    /*color: #0000aa;*/
+    color: #0000aa;
 }
 
 .basketdiv2 .point {
@@ -125,10 +114,8 @@ h3 {
     text-align: left !important;
     line-height: 1.2 !important;
 }
-.basketdiv .data .price,
-.basketdiv .data .sum,
-.basketdiv .data .point {
-    /*text-align: right;*/
+.basketdiv .data .price, .basketdiv .data .sum, .basketdiv .data .point {
+    text-align: right;
 }
 .baseform > tbody > tr > td:first-child {
     width: 100px;
@@ -144,23 +131,17 @@ h3 {
 .buttongroup.center {
     text-align: center;
 }
-.buttongroup input[type=text],
-.buttongroup input[type=password] {
+.buttongroup input[type=text], .buttongroup input[type=password] {
     height: 30px;
 }
 .buttongroup button, .buttongroup a {
     margin-right: 5px;
 }
-.buttongroup button:last-child,
-.buttongroup a:last-child {
+.buttongroup button:last-child, .buttongroup a:last-child {
     margin-right: 0;
 }
 
-.abutton,
-.abutton:link,
-.abutton:visited,
-.abutton:active,
-input[type=button] {
+.abutton, .abutton:link, .abutton:visited, .abutton:active, input[type=button] {
     background-color: #383838;
     border: 1px solid #888888;
     color: #ffffff;
@@ -176,23 +157,20 @@ input[type=button] {
 }
 
 .abutton-alt {
-    background-color: #b00;
+    background-color: #d3e2c6;
 }
 
 .red {
     color:#b00;
 }
 .blue {
-    /*color: #0075ff;*/
+    color: #0075ff;
 }
-.basketrowcmd,
-.sumcount,
-.summoney{
+.basketrowcmd, .sumcount, .summoney{
     text-align: right;
     margin-bottom: 10px;
 }
-.sumcount,
-.summoney{
+.sumcount, .summoney{
     font-size: 1.25em;
     font-weight: bold;
 }
@@ -202,8 +180,7 @@ input[type=button] {
 .buttongroup a{
     text-decoration: none;
 }
-.cmd a,
-.cmd span {
+.cmd a, .cmd span {
     padding: 12px 30px;
     box-sizing: border-box;
     margin-top: 10px;
@@ -212,16 +189,14 @@ input[type=button] {
     background-color: #f4f4f4;
     border: 1px solid #e0e0e0;
     text-align: center;
-}/*선택상품주문 버튼*/
-.cmd.small a,
-.cmd.small span {
+}
+.cmd.small a, .cmd.small span {
     padding: 6px 20px;
     font-size: 0.8125em;
 }
 
 .orderform .p_num {
-    text-align: center;
+    text-align: right;
     width: 40px;
-
-    border:none;
+    font-size: 1em;
 }
