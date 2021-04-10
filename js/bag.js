@@ -7,14 +7,16 @@ let basket = {
         const currentUser = getCookie("currentUser");
         const userItemList = JSON.parse(localStorage.getItem(currentUser+"userItemList"));
 
-        for(let i =0; i < userItemList.length; i++){
+        for(let i =0; i < checkedList.length; i++){
+
+            let thisItemid = checkedList[i].value;
+
             if(checkedList[i].checked == true){
-                let thisItemid = checkedList[i].value;
-
-                if(userItemList[i].item === thisItemid){
-                    delete userItemList.splice(i, 1);
+                for(let i =0; i < userItemList.length; i++) {
+                    if (userItemList[i].item === thisItemid) {
+                        delete userItemList.splice(i, 1);
+                    }
                 }
-
             }
 
         }
@@ -31,26 +33,11 @@ let basket = {
     },
     //장바구니 전체 비우기
     delAllItem: function(){
-        const checkedList = document.getElementsByName("buy");
-        const currentUser = getCookie("currentUser");
-        const userItemList = JSON.parse(localStorage.getItem(currentUser+"userItemList"));
 
-        for(let i =0; i < userItemList.length; i++){
-            if(checkedList[i].checked == true){
-
-            }
-            if(userItemList[i].item === thisItemid){
-                delete userItemList.splice(i, 1);
-            }
-        }
-
-        const newJson = JSON.stringify(userItemList);
-        localStorage.setItem(currentUser+"userItemList", newJson);
+        window.location.href = 'mybag.html';
 
         this.reCalc();
         this.updateUI();
-
-        window.location.href = 'mybag.html';
 
     },
     //재계산
