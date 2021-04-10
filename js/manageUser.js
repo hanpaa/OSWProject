@@ -59,12 +59,12 @@ function registerInvalidCheck(id, userContact) {
                 if (thisUser == null) return true;
 
                 if ((thisUser.id) == id) {
-                    alert('이미 있는 아이디');
+                    alert('이미 사용하고 있는 아이디입니다!');
                     return false;
                 }
 
                 if ((thisUser.usercontact) == userContact){
-                    alert('이미 가입되어 있는 전화번호');
+                    alert('이미 가입되어 있는 전화번호 입니다. 확인해주세요.');
                     return false;
                 }
 

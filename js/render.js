@@ -195,6 +195,8 @@ if(getCookie("clickId")===null){
  */
 function renderMyBag() {
 
+    //
+
     try{
         let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
         localItemDB.length;
@@ -295,6 +297,7 @@ function renderMyBag() {
         inputPNum.maxLength = 4;
         inputPNum.setAttribute("value", "0");
         inputPNum.setAttribute("ItemNo", thisItemNumber);
+        //숫자를 바꾸었을때 함수 생
         inputPNum.setAttribute("onkeyup", "javascript:basket.changePNum(" + (i+1) + ");");
         divUpdown.appendChild(inputPNum);
 
@@ -333,7 +336,8 @@ function renderMyBag() {
         divBasketCmd.setAttribute("class", "basketcmd");
         const aAbutton = document.createElement("a");
         aAbutton.setAttribute("class", "abutton");
-        aAbutton.setAttribute("id", thisItemNumber);
+        aAbutton.setAttribute("id", thisItemNumber);성
+        //아이템 개별 삭제 함수 생성 (args => 해당 아이템의 id)
         aAbutton.setAttribute("onclick", "javascript:basket.delItem(this.id);");
         aAbutton.setAttribute("href", "javascript:void(0)");
         aAbutton.setAttribute("value", i);
@@ -431,3 +435,4 @@ function renderUserProfile() {
 //
 //
 // }
+

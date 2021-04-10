@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-ico">
+    <meta name="theme-color" content="#ffffff">
+    <title>SweetHome</title>
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="../css/mybag.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="../js/includeHTML.js"></script>
+    <script src="../js/cookieSession.js"></script>
+    <script src="../js/render.js"></script>
+    <script src="../js/bag.js"></script>
+
+</head>
+
+<body>
+<header>
+    <div class="headerLogin">
+        <ul>
+            <li><a id ="registerBtn" href="register.html">회원가입</a></li>
+            <li><a id ="loginBtn" href="login.html">로그인</a></li>
+            <li><a id ="logoutBtn" onclick="logout()">로그아웃</a></li>
+            <li><a id ="bagBtn" href="mybag.html">장바구니</a></li>
+            <li><a id ="profileBtn" href="userProfile.html">내 정보</a></li>
+            <li><a id="csBtn" href="CScenter.html">고객센터</a>
+                <ul class="csBtn_sub">
+                    <li><a href="CScenter.html">문의하기</a></li>
+                    <li><a href="CSnotice.html">공지사항</a></li>
+                    <li><a href="CSfaq.html">자주묻는질문</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="logo">
+        <ul>
+            <li><a href="index.html">SWEETHOME</a></li>
+        </ul>
+    </div>
+
+    <div class="nav_menu">
+        <ul>
+            <li><a class="nav-menu" href="best_product.html">베스트</a></li>
+            <li><a class="nav-menu" href="new_product.html">신상품</a></li>
+            <li><a class="nav-menu" href="top_product.html">상의</a></li>
+            <li><a class="nav-menu" href="bottom_product.html">하의</a></li>
+            <li><a class="nav-menu" href="training_product.html">홈트용품</a></li>
+        </ul>
+    </div>
+</header>
+<section id="contents">
+    <h3>구매목록</h3>
+
+    <form name="orderform" id="orderform" method="post" class="orderform" action="/Page">
+        <input type="hidden" name="cmd" value="order">
+        <div class="basketdiv" id="basket">
+            <div class="row head">
+                <div class="subdiv">
+                    <div class="check">선택</div>
+                    <div class="img">상품이미지</div>
+                    <div class="pname">상품명</div>
+                </div>
+                <div class="subdiv">
+                    <div class="basketprice">가격</div>
+                    <div class="num">수량</div>
+                    <div class="sum">합계</div>
+                </div>
+                <div class="subdiv">
+                    <div class="basketcmd">삭제</div>
+                </div>
+                <div class="split"></div>
+            </div>
+
+            <div class="row data">
+                <div class="subdiv">
+                    <div class="check"><input type="checkbox" name="buy" value="260" checked="">&nbsp;</div>
+                    <div class="img"><img src="./img/basket1.jpg" width="60"></div>
+                    <div class="pname">
+                        <span>찜마마(XJ-92214/3)</span>
+                    </div>
+                </div>
+                <div class="subdiv">
+                    <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20000">20,000원</div>
+                    <div class="num">
+                        <div class="updown">
+                        </div>
+                    </div>
+                    <div class="sum">40,000원</div>
+                </div>
+                <div class="subdiv">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="right-align basketrowcmd">
+        </div>
+
+        <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 0개</div>
+        <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 0원</div>
+
+        <div id="goorder" class="">
+            <div class="clear"></div>
+            <div class="buttongroup center-align cmd">
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<footer>
+    <div>
+        <span class = "company">회사명 : (주)SWEETHOME</span>
+        <span class = "owner">최제현, 서언주, 박지영</span>
+        <span class = "addr">오픈소스 웹 소프트웨어</span>
+    </div>
+</footer>
+
+</body>
+
+<script>
+    includeHTML();
+    changeLoginBtn();
+    renderMyBag();
+</script>
+<script src="../js/manageItem.js"></script>
+
+
+</html>

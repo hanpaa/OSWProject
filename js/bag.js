@@ -1,8 +1,15 @@
+/**
+ *
+ * 장바구니를 동적으로 관리하는 기능입니다.
+ *
+ */
+
 let basket = {
     totalCount: 0,
     totalPrice: 0,
     //체크한 장바구니 상품 비우기
     delCheckedItem: function(){
+
         const checkedList = document.getElementsByName("buy");
         const currentUser = getCookie("currentUser");
         const userItemList = JSON.parse(localStorage.getItem(currentUser+"userItemList"));
@@ -13,6 +20,7 @@ let basket = {
 
             if(checkedList[i].checked == true){
                 for(let i =0; i < userItemList.length; i++) {
+                    //아이템 id가 같다면 장바구니에서 제거합니다.
                     if (userItemList[i].item === thisItemid) {
                         delete userItemList.splice(i, 1);
                     }
@@ -28,7 +36,6 @@ let basket = {
         this.updateUI();
 
         window.location.href = 'mybag.html';
-        //AJAX 서버 업데이트 전송
 
     },
     //장바구니 전체 비우기
@@ -69,7 +76,6 @@ let basket = {
 
         var price = item.parentElement.parentElement.previousElementSibling.firstElementChild.getAttribute('value');
         item.parentElement.parentElement.nextElementSibling.textContent = (newval * price).formatNumber()+"원";
-        //AJAX 업데이트 전송
 
         //전송 처리 결과가 성공이면
         this.reCalc();
@@ -103,18 +109,21 @@ Number.prototype.formatNumber = function(){
     return nstr;
 };
 
+
+/**
+ * @author "최제현"
+ * @date 2021/04/11
+ * 장바구니에서 갯수를 입력한 물건들을 주문 신청합니다.
+ */
 function bagOrder() {
 
     let choosedItemList = new Array();
     const currentUser = getCookie("currentUser");
     const storageName = currentUser + "userBuyItemList" ;
 
-    // let itemJson = {};
-
-    // //default 갯수는 1개입니다.
-
     for(let i = 1; i < 99; i++){
 
+        //선택한 물건이 없을때의 예외처리
         try{
             const selectedItem = document.getElementById("p_num"+i);
             const itemNo = selectedItem.getAttribute("ItemNo");
@@ -122,9 +131,12 @@ function bagOrder() {
         }catch (e) {
             continue;
         }
+
+        //선택한 물건이 있는경우
         const selectedItem = document.getElementById("p_num"+i);
         const itemNo = selectedItem.getAttribute("ItemNo");
         const itemNum = selectedItem.getAttribute("value");
+        //선택한 물건의 갯수가 0 이 아닌경우, 가격, 총갯수, 아이템 정보를 저장합니다.
         if(itemNum == 0) continue;
         const sumPrice = document.getElementById("sum_p_price").innerText;
         const totalnumber = document.getElementById("sum_p_num").innerText;
