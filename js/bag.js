@@ -120,7 +120,7 @@ function bagOrder() {
     let choosedItemList = new Array();
     const currentUser = getCookie("currentUser");
     const storageName = currentUser + "userBuyItemList" ;
-
+    let errorNo = false;
     for(let i = 1; i < 99; i++){
 
         //선택한 물건이 없을때의 예외처리
@@ -132,19 +132,33 @@ function bagOrder() {
             continue;
         }
 
+
         //선택한 물건이 있는경우
         const selectedItem = document.getElementById("p_num"+i);
         const itemNo = selectedItem.getAttribute("ItemNo");
         const itemNum = selectedItem.getAttribute("value");
         //선택한 물건의 갯수가 0 이 아닌경우, 가격, 총갯수, 아이템 정보를 저장합니다.
-        if(itemNum == 0) continue;
+        if(!(itemNum >= 0)){
+            alert('유효하지 않는 값입니다.');
+            // localStorage.removeItem(storageName);
+            errorNo = true;
+            window.location.href = "mybag.html";
+            break;
+        }else if(itemNum == 0) continue;
+
+        const totalMoney = document.getElementById("totalMoney"+(i+1)).innerText;
         const sumPrice = document.getElementById("sum_p_price").innerText;
         const totalnumber = document.getElementById("sum_p_num").innerText;
-        let itemJson = {itemNo : itemNo, itemNum : itemNum};
+        let itemJson = {itemNo : itemNo, itemNum : itemNum, itemPrice : totalMoney};
         choosedItemList.push(itemJson);
         const newJson = JSON.stringify({items : choosedItemList, totalmoney : sumPrice, totalnumber : totalnumber});
         localStorage.setItem(storageName, newJson);
 
+    }
+
+    if(!errorNo){
+        alert('주문이 완료되었습니다.');
+        window.location.href = 'myorder.html';
     }
 
 

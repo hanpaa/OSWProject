@@ -58,7 +58,7 @@
         <div class="basketdiv" id="basket">
             <div class="row head">
                 <div class="subdiv">
-                    <div class="check">선택</div>
+                    <div class="check">번</div>
                     <div class="img">상품이미지</div>
                     <div class="pname">상품명</div>
                 </div>
@@ -68,30 +68,29 @@
                     <div class="sum">합계</div>
                 </div>
                 <div class="subdiv">
-                    <div class="basketcmd">삭제</div>
+                    <div class="basketcmd">상태</div>
                 </div>
                 <div class="split"></div>
             </div>
 
-            <div class="row data">
-                <div class="subdiv">
-                    <div class="check"><input type="checkbox" name="buy" value="260" checked="">&nbsp;</div>
-                    <div class="img"><img src="./img/basket1.jpg" width="60"></div>
-                    <div class="pname">
-                        <span>찜마마(XJ-92214/3)</span>
-                    </div>
-                </div>
-                <div class="subdiv">
-                    <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20000">20,000원</div>
-                    <div class="num">
-                        <div class="updown">
-                        </div>
-                    </div>
-                    <div class="sum">40,000원</div>
-                </div>
-                <div class="subdiv">
-                </div>
-            </div>
+<!--            <div class="row data">-->
+<!--                <div class="subdiv">-->
+<!--                    <div class="check">1</div>-->
+<!--                    <div class="img"><img src="./img/basket1.jpg" width="60"></div>-->
+<!--                    <div class="pname">-->
+<!--                        <span>찜마마(XJ-92214/3)</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="subdiv">-->
+<!--                    <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20000">20,000원</div>-->
+<!--                    <div class="num">-->
+<!--                            <div id = "p_num1">1개</div>-->
+<!--                    </div>-->
+<!--                    <div class="sum">40,000원</div>-->
+<!--                </div>-->
+<!--                <div class="subdiv"><div class="num">주문완료</div></div>-->
+<!--                </div>-->
+<!--            </div>-->
 
 
         </div>
@@ -99,14 +98,6 @@
         <div class="right-align basketrowcmd">
         </div>
 
-        <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 0개</div>
-        <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 0원</div>
-
-        <div id="goorder" class="">
-            <div class="clear"></div>
-            <div class="buttongroup center-align cmd">
-            </div>
-        </div>
 
     </form>
 </section>
@@ -124,7 +115,7 @@
 <script>
     includeHTML();
     changeLoginBtn();
-    renderMyBag();
+    renderMyOrder();
 </script>
 <script src="../js/manageItem.js"></script>
 

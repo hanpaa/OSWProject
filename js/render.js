@@ -322,6 +322,7 @@ function renderMyBag() {
 
         const divSum = document.createElement("div");
         divSum.setAttribute("class", "sum");
+        divSum.setAttribute("id", "totalMoney"+(i+1));
         divSum.innerText = thisItem.price + "원";
 
         divNum.appendChild(divUpdown);
@@ -336,7 +337,7 @@ function renderMyBag() {
         divBasketCmd.setAttribute("class", "basketcmd");
         const aAbutton = document.createElement("a");
         aAbutton.setAttribute("class", "abutton");
-        aAbutton.setAttribute("id", thisItemNumber);성
+        aAbutton.setAttribute("id", thisItemNumber);
         //아이템 개별 삭제 함수 생성 (args => 해당 아이템의 id)
         aAbutton.setAttribute("onclick", "javascript:basket.delItem(this.id);");
         aAbutton.setAttribute("href", "javascript:void(0)");
@@ -435,4 +436,161 @@ function renderUserProfile() {
 //
 //
 // }
+
+
+/**
+ * @author 최제현
+ * @date 2021/04/05
+ *
+ * 주문목록 페이지에 html를 생성하는 함수
+ * 04/10 수정 형식에 맞추어 html생성
+ */
+function renderMyOrder() {
+
+    //
+
+    try{
+        let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
+        localItemDB.length;
+        let currentUser = getCookie("currentUser");
+        let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userBuyItemList")))));
+        myBagDB.length;
+    }catch (e) {
+        alert('잘못된 접근입니다.');
+        window.location.href="index.html";
+    }
+
+    let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
+    let currentUser = getCookie("currentUser");
+    let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userBuyItemList")))));
+
+    const divBasketDiv = document.getElementById("basket");
+
+    for(let i = 0; i < myBagDB["items"].length; i++){
+        const buyItem = myBagDB["items"][i];
+        const buyItemNumber = myBagDB["items"][i].itemNo;
+        const thisItem = localItemDB.items[buyItemNumber];
+
+        //<div class="row data">
+        const divRowData = document.createElement("div");
+        divRowData.setAttribute("class", "row data");
+
+
+
+        //<div class="subdiv">
+        const divSubDiv1 = document.createElement("div");
+        divSubDiv1.setAttribute("class", "subdiv")
+        divRowData.appendChild(divSubDiv1);
+
+        //<div class="check"><input type="checkbox" name="buy" value="260" checked="">&nbsp;</div>
+        const divCheck = document.createElement("div");
+        divCheck.setAttribute("class", "check");
+        divCheck.innerText = i+1;
+        divSubDiv1.appendChild(divCheck);
+
+
+        // <div class="img"><img src="./img/basket1.jpg" width="60"></div>
+        const divImg = document.createElement("div");
+        divImg.setAttribute("class", "img");
+        const itemImg = document.createElement("img");
+        itemImg.src = "../css/image/" + thisItem.image1 + ".jpg";
+        itemImg.height = 60;
+        itemImg.width = 40;
+        divImg.appendChild(itemImg);
+        divSubDiv1.appendChild(divImg);
+
+        //<div class="pname">
+        const divPName = document.createElement("div");
+        divPName.setAttribute("class", "pname");
+
+        //<span>상품명</span>        const spanItemName = document.createElement("span");
+        const spanItemName = document.createElement("span");
+        spanItemName.innerText = thisItem.name;
+        divPName.appendChild(spanItemName);
+        divSubDiv1.appendChild(divPName);
+
+        //<div class="subdiv">
+        const divSubDiv2 = document.createElement("div");
+        divSubDiv2.setAttribute("class", "subdiv");
+
+
+
+        //<div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20000">20,000원</div>
+        const divBasketPrice = document.createElement("div");
+        divBasketPrice.setAttribute("class", "basketprice");
+        divBasketPrice.innerText = thisItem.price + "";
+        const inputPPrice = document.createElement("input");
+        inputPPrice.type = "hidden";
+        inputPPrice.name = "p_price";
+        inputPPrice.setAttribute("value", thisItem.price.replace(",", ""));
+        inputPPrice.setAttribute("id", "p_price" + (i+1));
+        inputPPrice.setAttribute("class", "p_price");
+
+        divBasketPrice.appendChild(inputPPrice);
+        divSubDiv2.appendChild(divBasketPrice);
+
+        //<div class="num">
+        const divNum = document.createElement("div");
+        divNum.setAttribute("class", "num");
+
+        const divPNum = document.createElement("div");
+        divPNum.setAttribute("id", "p_num" +(i+1));
+        divPNum.innerText = buyItem.itemNum + "개";
+
+
+        const divSum = document.createElement("div");
+        divSum.setAttribute("class", "sum");
+        divSum.innerText = buyItem.itemPrice;
+
+        divNum.appendChild(divPNum);
+        divSubDiv2.appendChild(divNum);
+        divSubDiv2.appendChild(divSum);
+        divRowData.appendChild(divSubDiv2);
+
+        const divSubDiv3 = document.createElement("div");
+        divSubDiv3.setAttribute("class", "subdiv");
+
+        const divBasketOrder = document.createElement("div");
+        divBasketOrder.setAttribute("class", "num");
+        divBasketOrder.innerText = "주문완료";
+
+
+        divSubDiv3.appendChild(divBasketOrder);
+        divRowData.appendChild(divSubDiv3);
+
+        divBasketDiv.appendChild(divRowData);
+
+        const orderForm = document.getElementById("orderform");
+
+        //<div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 0개</div>
+        const divSumCount = document.createElement("div");
+        divSumCount.setAttribute("class", "bigtext right-align sumcount");
+        divSumCount.setAttribute("id", "sum_p_num");
+        divSumCount.innerText = myBagDB["totalnumber"];
+
+
+        //<div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 0원</div>
+        const divTotalMoney = document.createElement("div");
+        divTotalMoney.setAttribute("class", "bigtext right-align box blue summoney");
+        divTotalMoney.setAttribute("id", "sum_p_price");
+        divTotalMoney.innerText = myBagDB["totalmoney"];
+
+        const divGoorder = document.createElement("div");
+        divGoorder.setAttribute("id", "goorder");
+        divGoorder.innerHTML = "<div class=\"clear\"></div> <div class=\"buttongroup center-align cmd\"> </div>";
+
+
+
+        orderForm.appendChild(divSumCount);
+        orderForm.appendChild(divTotalMoney);
+        orderForm.appendChild(divGoorder);
+
+
+
+    }
+
+
+
+
+}
 
