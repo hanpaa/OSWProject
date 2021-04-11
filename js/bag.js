@@ -144,7 +144,9 @@ function bagOrder() {
             errorNo = true;
             window.location.href = "mybag.html";
             break;
-        }else if(itemNum == 0) continue;
+        }
+
+        if(itemNum == 0) continue;
 
         const totalMoney = document.getElementById("totalMoney"+(i+1)).innerText;
         const sumPrice = document.getElementById("sum_p_price").innerText;
