@@ -150,7 +150,7 @@ function findUserId() {
 
     if(findUserByName(userName, contact) !== -1){
        const result = findUserByName(userName, contact);
-       alert("userId : "+result);
+       alert("고객님의 아이디는"+result+"입니다.");
 
     }
 
@@ -173,7 +173,7 @@ function findUserByName(name, contact) {
             if(thisUser == null) return -1;
             if ((thisUser.username) == name) {
                 //아이디를 찾으면 Password 동일한지 검사
-                if ((thisUser.usercontact) == contact) {
+                if ((thisUser.contact) == contact) {
                     let resultId = thisUser.id;
                     return resultId;
                 } else {
