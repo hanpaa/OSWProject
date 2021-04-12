@@ -569,36 +569,33 @@ function renderMyOrder() {
         divRowData.appendChild(divSubDiv3);
 
         divBasketDiv.appendChild(divRowData);
-
-        const orderForm = document.getElementById("orderform");
-
-        //<div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 0개</div>
-        const divSumCount = document.createElement("div");
-        divSumCount.setAttribute("class", "bigtext right-align sumcount");
-        divSumCount.setAttribute("id", "sum_p_num");
-        divSumCount.innerText = myBagDB["totalnumber"];
-
-
-        //<div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 0원</div>
-        const divTotalMoney = document.createElement("div");
-        divTotalMoney.setAttribute("class", "bigtext right-align box blue summoney");
-        divTotalMoney.setAttribute("id", "sum_p_price");
-        divTotalMoney.innerText = myBagDB["totalmoney"];
-
-        const divGoorder = document.createElement("div");
-        divGoorder.setAttribute("id", "goorder");
-        divGoorder.innerHTML = "<div class=\"clear\"></div> <div class=\"buttongroup center-align cmd\"> </div>";
-
-
-
-        orderForm.appendChild(divSumCount);
-        orderForm.appendChild(divTotalMoney);
-        orderForm.appendChild(divGoorder);
-
-
-
     }
 
+
+    const orderForm = document.getElementById("orderform");
+
+    //<div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 0개</div>
+    const divSumCount = document.createElement("div");
+    divSumCount.setAttribute("class", "bigtext right-align sumcount");
+    divSumCount.setAttribute("id", "sum_p_num");
+    divSumCount.innerText = myBagDB["totalnumber"];
+
+
+    //<div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 0원</div>
+    const divTotalMoney = document.createElement("div");
+    divTotalMoney.setAttribute("class", "bigtext right-align box blue summoney");
+    divTotalMoney.setAttribute("id", "sum_p_price");
+    divTotalMoney.innerText = myBagDB["totalmoney"];
+
+    const divGoorder = document.createElement("div");
+    divGoorder.setAttribute("id", "goorder");
+    divGoorder.innerHTML = "<div class=\"clear\"></div> <div class=\"buttongroup center-align cmd\"> </div>";
+
+
+
+    orderForm.appendChild(divSumCount);
+    orderForm.appendChild(divTotalMoney);
+    orderForm.appendChild(divGoorder);
 
 
 

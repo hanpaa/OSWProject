@@ -163,6 +163,7 @@ function bagOrder() {
         window.location.href = 'myorder.html';
     }
 
+    errorNo = false;
 
 
 }
