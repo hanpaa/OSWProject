@@ -225,16 +225,19 @@ function findPasswordByName(userName, contact, id) {
 
         if ((thisUser.username) == userName) {
             //아이디를 찾으면 Password 동일한지 검사
-            if ((thisUser.usercontact) == contact) {
+            if ((thisUser.contact) == contact) {
                 if((thisUser.id) == id){
-                    alert('password를 1234로 리셋합니다. 비밀번호를 변경해주세요.');
+                    let userInput = prompt('변경할 password를 입력해주세요.');
                     //Json 수정
                     delete thisUser.password;
-                    thisUser.password = '1234';
+                    thisUser.password = userInput;
                     thisUser = JSON.stringify(thisUser);
                     //수정한 Json 을 localStorage에 다시 올림
                     localStorage.removeItem(key.toString());
                     localStorage.setItem(key.toString(), thisUser);
+
+                    alert("비밀번호가 변경되었습니다! 로그인 페이지로 이동합니다.");
+                    window.location.href = "login.html"
                     return;
                 }
 
