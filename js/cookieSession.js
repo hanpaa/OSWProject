@@ -26,10 +26,11 @@ function changeLoginBtn() {
 
     if(getCookie("currentUser") != null){
         loginBtn.style.display = "none";
-        registerBtn.style.display = "none"
+        registerBtn.style.display = "none";
     }else{
         logoutBtn.style.display = "none";
         bagBtn.style.display = "none"
+        profileBtn.style.display = "none";
     }
 
 }

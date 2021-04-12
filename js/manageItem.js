@@ -128,7 +128,7 @@ const itemDB = {
             "image2": "product3_2",
             "image3": "product3_3",
             "new": "0",
-            "best" : "1",
+            "best" : "0",
             "detail": "이건 사실상 물통 광고지 않나"
         },
         {
@@ -139,7 +139,7 @@ const itemDB = {
             "image1": "product4_1",
             "image2": "product4_2",
             "image3": "product4_3",
-            "new": "1",
+            "new": "0",
             "best" : "0",
             "detail": "가볍고 탄탄한 sweethome의 신작입니다."
         },

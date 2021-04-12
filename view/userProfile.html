@@ -7,11 +7,13 @@
     <title>SweetHome</title>
     <link rel="stylesheet" href="../css/index.css" type="text/css">
     <link rel="stylesheet" href="../css/userPofile.css" type="text/css">
+    <link rel="stylesheet" href="../css/orderlist.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="../js/includeHTML.js"></script>
     <script src="../js/cookieSession.js"></script>
+    <script src="../js/render.js"></script>
     <script>
         $(function(){
             $("header").load("header.html");
@@ -67,7 +69,7 @@
 </header>
 
 <div id="contents">
-    <div class="section1">
+    <div id="section1">
         <article id = "main" align = "middle">
             <h2>내 정보</h2>
             <hr>
@@ -77,14 +79,42 @@
                     <li style = "cursor:pointer" data-tab = "buy_list">구매목록</li>
                 </ul>
             </div>
+
             <div id = "my_right">
                 <div id = "user_info" class = "tab_content current">
-                    회원정보
+                    <table>
+                        <tr id="profileName">
+                            <td class = "name">이름</td>
+                            <!--                            <td>박지영</td>-->
+                        </tr>
+
+                        <tr id="profileNumber">
+                            <td class = "sub">전화번호</td>
+                            <!--                            <td>01062087339</td>-->
+                        </tr>
+
+                        <tr id="profileAddress">
+                            <td class = "sub">주소</td>
+                            <!--                            <td>place holder</td>-->
+                        </tr>
+
+                        <tr id = "profileMail">
+                            <td class = "sub">이메일</td>
+                            <!--                            <td>lskdfs@naver.com</td>-->
+                        </tr>
+                    </table>
                 </div>
-                <div id = "buy_list" class = "tab_content">
-                    구매목록
+
+                <div id = "buy_list" class = "tab_content current">
+                    <table>
+                        <tr>
+                            <td class = "name"><a href="myorder.html">구매목록</a></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
+
+
         </article>
     </div>
 </div>
@@ -101,6 +131,7 @@
 <script>
     includeHTML();
     changeLoginBtn();
+    renderUserProfile();
 </script>
 <script src="../js/manageItem.js"></script>
 
