@@ -99,6 +99,16 @@ function renderNew() {
 
 }
 
+
+function renderBest() {
+
+    let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
+    let length = localItemDB.items.length;
+
+    renderProduct(localItemDB,length, "best", "1")
+
+}
+
 function renderTraining() {
 
     let localItemDB = (JSON.parse(localStorage.getItem("DB"))).DB;
@@ -204,7 +214,7 @@ function renderMyBag() {
         let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userItemList")))));
         myBagDB.length;
     }catch (e) {
-        alert('잘못된 접근입니다.');
+        alert('잘못된 접근입니다. 장바구니에 제품들을 추가해주세요.');
         window.location.href="index.html";
     }
 
@@ -456,7 +466,7 @@ function renderMyOrder() {
         let myBagDB = (JSON.parse((localStorage.getItem((currentUser+"userBuyItemList")))));
         myBagDB.length;
     }catch (e) {
-        alert('잘못된 접근입니다.');
+        alert('잘못된 접근입니다. 장바구니에서 제품을 구매해주세요.');
         window.location.href="index.html";
     }
 
