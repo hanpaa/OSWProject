@@ -101,7 +101,7 @@ function login() {
         setCookie("currentUser", userKey.toString(), 4);
         window.location.href = "index.html";
     }else{
-        alert('회원이 없습니다.');
+        alert('비밀번호가 일치하지 않거나, 회원이 없습니다.');
     }
 
 }
@@ -127,7 +127,7 @@ function loginInvalidCheck(name, pw){
             if((JSON.parse(localStorage.getItem(key.toString()))).password == pw){
                 return key;
             }else{
-                alert('비밀번호가 일치하지 않습니다.');
+                // alert("회원정보가 없습니다.");
                 return -1;
             }
         }
@@ -150,7 +150,7 @@ function findUserId() {
 
     if(findUserByName(userName, contact) !== -1){
        const result = findUserByName(userName, contact);
-       alert("고객님의 아이디는"+result+"입니다.");
+       alert("고객님의 아이디는 "+result+" 입니다.");
 
     }
 
@@ -170,7 +170,10 @@ function findUserByName(name, contact) {
         // 동일한 아이디가 나올때까지 Key 탐색
         let thisUser = JSON.parse(localStorage.getItem(key.toString()));
 
-            if(thisUser == null) return -1;
+            if(thisUser == null){
+                alert('회원이 없습니다.');
+                return -1;
+            }
             if ((thisUser.username) == name) {
                 //아이디를 찾으면 Password 동일한지 검사
                 if ((thisUser.contact) == contact) {

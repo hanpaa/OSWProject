@@ -21,6 +21,18 @@ function setItemDB() {
 function getChooseItem() {
 
     // 고를 수 있는 item 의 리스트를 받아옵니다.
+
+
+    try{
+        let chooseItem = document.getElementsByName("chooseItem");
+        const chooseItemLength = chooseItem.length;
+        //현재 로그인중인 유저 찾기.
+        const currentUser = getCookie("currentUser").toString();
+        const storageName = currentUser + "userItemList" ;
+        let choosedItemList = new Array();
+    }catch (e) {
+        alert("잘못된 접근입니다. 로그인을 했는지 확인해주세요.");
+    }
     let chooseItem = document.getElementsByName("chooseItem");
     const chooseItemLength = chooseItem.length;
     //현재 로그인중인 유저 찾기.
