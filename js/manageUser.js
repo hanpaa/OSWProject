@@ -227,6 +227,7 @@ function findPasswordByName(userName, contact, id) {
             //아이디를 찾으면 Password 동일한지 검사
             if ((thisUser.contact) == contact) {
                 if((thisUser.id) == id){
+                    //user에게 바꿀 비밀번호 요구.
                     let userInput = prompt('변경할 password를 입력해주세요.');
                     //Json 수정
                     delete thisUser.password;

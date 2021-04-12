@@ -1,19 +1,27 @@
+// 세션 대신 사용할 쿠키 설정
 var setCookie = function(name, value, exp) {
     var date = new Date();
     date.setTime(date.getTime() + exp*24*60*60*1000);
     document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
 };
 
-
+//params : name 에서 받은 이름으로 쿠키 검색
 var getCookie = function(name) {
     var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
     return value? value[2] : null;
 };
 
+// 쿠키 지우기
 var deleteCookie = function(name) {
     setCookie(name, "", -1);
 }
 
+/**
+ * @author 최제현
+ * @date 2021/04/12 - 수정
+ *
+ * 로그인을 했을때, 불필요한 버튼들을 안보이게 해주는 함수.
+ */
 function changeLoginBtn() {
 
     const registerBtn = document.getElementById("registerBtn");
@@ -35,6 +43,13 @@ function changeLoginBtn() {
 
 }
 
+
+/**
+ * @author 최제현
+ * @date 2021/03/28
+ *
+ * 로그아웃을 요청하는 함수.
+ */
 function logout() {
 
     if(getCookie("currentUser") != null){
@@ -47,11 +62,18 @@ function logout() {
 
 }
 
-function addDetailViewCookie() {
-
-    let getItemNumber = document.getElementById("")
-
-}
+/**
+ * @author 최제현
+ *
+ * 상품 상세정보를 출력하기 위한 clicklistner
+ *
+ * 2021/04/11 - 버그로 인한 잠시 삭제
+ */
+// function addDetailViewCookie() {
+//
+//     let getItemNumber = document.getElementById("")
+//
+// }
 
 // function nameClickListner() {
 //
