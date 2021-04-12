@@ -43,8 +43,8 @@ function renderProduct(model, length, JSONKey, condition) {
                 itemInput.setAttribute("name", "chooseItem");
                 itemInput.setAttribute("value", DB.itemNumber)
                 imgSrc.src = "../css/image/" + DB.image1 + ".jpg";
-                imgSrc.width = 270;
-                imgSrc.height = 380;
+                imgSrc.width = 200;
+                imgSrc.height = 270;
                 imgSrc.name = DB.itemNumber;
                 itemLiA.setAttribute("class", "a");
                 itemLiA.setAttribute("name", DB.itemNumber);
