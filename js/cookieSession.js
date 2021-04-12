@@ -52,13 +52,13 @@ function addDetailViewCookie() {
 
 }
 
-function nameClickListner() {
-
-    document.addEventListener('click', function idCookieMaker(event) {
-        const clickTarget = event.target;
-        const id = clickTarget.getAttribute("name");
-        setCookie("clickId", id, 4)
-    })
-
-
-}
+// function nameClickListner() {
+//
+//     document.addEventListener('click', function idCookieMaker(event) {
+//         const clickTarget = event.target;
+//         const id = clickTarget.getAttribute("name");
+//         setCookie("clickId", id, 4)
+//     })
+//
+//
+// }
