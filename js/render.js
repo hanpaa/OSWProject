@@ -52,7 +52,7 @@ function renderProduct(model, length, JSONKey, condition) {
                 itemLiB.setAttribute("class", "b");
                 itemLiB.innerText = DB.price + "원";
                 itemLiC.setAttribute("class", "c");
-                itemAHref.href = "detail_view.html";
+                // itemAHref.href = "detail_view.html";
 
                 //자식노드로 삽입
                 divBox.appendChild(itemUl);

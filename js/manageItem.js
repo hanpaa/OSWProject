@@ -126,6 +126,7 @@ const itemDB = {
             "image2": "product3_2",
             "image3": "product3_3",
             "new": "0",
+            "best" : "1",
             "detail": "이건 사실상 물통 광고지 않나"
         },
         {
