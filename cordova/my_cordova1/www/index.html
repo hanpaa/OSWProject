@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InAppBrowser.addEventListener</title>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        // Wait for device API libraries to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            // window.open = cordova.InAppBrowser.open;
+            var target = "_blank";
+            var options = "location=no";
+            var url = "http://osw8team.kro.kr:8080/OSWProject/view/index.html";
+            //var url = " http://youtube.com";
+            var ref = cordova.InAppBrowser.open(url, target, options);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
