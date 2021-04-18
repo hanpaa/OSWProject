@@ -148,7 +148,7 @@ function bagOrder() {
 
         if(itemNum == 0) continue;
 
-        const totalMoney = document.getElementById("totalMoney"+(i+1)).innerText;
+        const totalMoney = document.getElementById("totalMoney"+(i)).innerText;
         const sumPrice = document.getElementById("sum_p_price").innerText;
         const totalnumber = document.getElementById("sum_p_num").innerText;
         let itemJson = {itemNo : itemNo, itemNum : itemNum, itemPrice : totalMoney};
