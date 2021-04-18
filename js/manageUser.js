@@ -63,7 +63,7 @@ function registerInvalidCheck(id, userContact) {
                     return false;
                 }
 
-                if ((thisUser.usercontact) == userContact){
+                if ((thisUser.contact) == userContact){
                     alert('이미 가입되어 있는 전화번호 입니다. 확인해주세요.');
                     return false;
                 }
