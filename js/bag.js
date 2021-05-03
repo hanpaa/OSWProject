@@ -171,3 +171,8 @@ function bagOrder() {
 function hello() {
     alert("안녕");
 }
+
+function bagbag() {
+    alert("장바구니에 추가 하였습니다.");
+
+}
